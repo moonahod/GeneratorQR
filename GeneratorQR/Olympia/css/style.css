@@ -1,0 +1,45 @@
+body {
+
+     margin: 0;
+     font-family: monospace;
+     font-size: 14pt;
+     }
+
+.guide {
+     background-image: url("../media/highway_at_night.jpg");
+     background-color: #074f57;
+     background-size: cover;
+     }
+
+.qrdata {
+    background-image: url("../media/soft_green_bg.jpg");
+    background-color: #074f57;
+    background-size: cover;
+    }
+
+.h1 {
+    color: #D3D3D3;
+    text-align: center;
+    font-family: system-ui;
+    }
+
+.ps{
+    color: #bab4a4;
+    text-align: center;
+    font-family: monospace;
+    font-size: 13pt;
+    }
+
+     .button {
+     border: 1;
+     color: white;
+     background-color: #6EC175;
+     padding: 12px 30px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 18px;
+     margin: 50px 547px;
+     cursor: pointer;
+
+    }
