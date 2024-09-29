@@ -4,6 +4,8 @@ body {
      font-size: 14pt;
 }
 
+# Basic settings for pages
+
 .home {
       background-image: url("../media/smooth_bg.jpg");
       background-color: #074f57;
@@ -21,6 +23,8 @@ body {
     background-color: #074f57;
     background-size: cover;
 }
+
+# Menu button components
 
 .bar1, .bar2, .bar3 {
                     width: 37px;
@@ -41,6 +45,8 @@ body {
 .transform .bar3 {
                  transform: translate(0, -12.6px) rotate(45deg);
 }
+
+# Text design
 
 .guide_hs {
     color: #D3D3D3;
@@ -70,6 +76,8 @@ body {
     font-size: 17px;
 }
 
+# Container  for menu
+
 .container {
            display: inline-block;
            cursor: pointer;
@@ -79,7 +87,9 @@ body {
            left: 19px;
 }
 
-     .guide_button {
+# Buttons
+
+.guide_button {
      border: 1;
      color: white;
      background-color: #6EC175;
@@ -95,7 +105,7 @@ body {
 }
 
 
-     .home_button {
+.home_button {
      border: 1;
      color: white;
      background-color: #4e97c3;
