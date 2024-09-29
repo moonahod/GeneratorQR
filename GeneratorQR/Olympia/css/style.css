@@ -31,7 +31,7 @@ body {
 }
 
 .transform .bar1 {
-                 transform: translate(0, 11px) rotate(-45deg);
+                 transform: translate(0, 12.6px) rotate(-45deg);
 }
 
 .transform .bar2 {
@@ -39,7 +39,7 @@ body {
 }
 
 .transform .bar3 {
-                 transform: translate(0, -11px) rotate(45deg);
+                 transform: translate(0, -12.6px) rotate(45deg);
 }
 
 .guide_hs {
@@ -61,6 +61,13 @@ body {
          text-align: center;
          font-family: system-ui;
          font-size: 14px
+}
+
+.qrdata_hs {
+    color: #3b3b3b;
+    text-align: center;
+    font-family: system-ui;
+    font-size: 17px;
 }
 
 .container {
