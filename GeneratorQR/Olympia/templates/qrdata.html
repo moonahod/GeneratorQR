@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Data</title>
+    <title>Making QR code</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -20,6 +20,17 @@
             <input type="radio" id="png" name="fileFormat" value="png">
             <label for="png">.png</label><br>
         </form>
+        <button class="genBtn"
+                onclick="getData">Generate
+        </button>
+
+        <script>
+            function getData(event) {
+                event.preventDefault();
+                data = document.getElementById("qrdata").value;
+                return data;
+            }
+        </script>
     </div>
 </body>
 </html>
