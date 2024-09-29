@@ -22,7 +22,6 @@ body {
     background-size: cover;
 }
 
-
 .bar1, .bar2, .bar3 {
                     width: 37px;
                     height: 6px;
@@ -42,7 +41,6 @@ body {
 .transform .bar3 {
                  transform: translate(0, -12.6px) rotate(45deg);
 }
-
 
 .guide_hs {
     color: #D3D3D3;
