@@ -21,14 +21,13 @@
             <label for="png">.png</label><br>
         </form>
         <button class="genBtn"
-                onclick="getData">Generate
+                onclick="getData(this)">Generate
         </button>
 
         <script>
-            function getData(event) {
-                event.preventDefault();
-                data = document.getElementById("qrdata").value;
-                return data;
+            let getData = button => {
+                let data = document.getElementById('qrdata');
+                alert(data);
             }
         </script>
     </div>
