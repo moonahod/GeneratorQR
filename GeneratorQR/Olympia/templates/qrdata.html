@@ -6,21 +6,19 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="qrdata">
+    <div class="qrdata qrdata_hs">
         <h1>Start making your qrcode</h1>
         <form>
-            <label for="qrdata">Paste Qr code data here:</label><br>
+            <label for="qrdata">Put data you want to code here:</label><br>
             <input type="text" id="qrdata" name="qrdata"><br>
         </form>
 
         <form>
-            <label for="poll">What is your fav clothes brand?</label><br>
-            <input type="radio" id="Adidas" name="fav_brand" value="Adidas">
-            <label for="Adidas">Adidas</label><br>
-            <input type="radio" id="Nike" name="fav_brand" value="Nike">
-            <label for="Nike">Nike</label><br>
-            <input type="radio" id="Asics" name="fav_brand" value="Asics">
-            <label for="Asics">Asics</label>
+            <label for="poll">Choose file format for your code</label><br>
+            <input type="radio" id="jpg" name="fileFormat" value="jpg">
+            <label for="jpg">.jpg</label><br>
+            <input type="radio" id="png" name="fileFormat" value="png">
+            <label for="png">.png</label><br>
         </form>
     </div>
 </body>
