@@ -6,20 +6,18 @@ from django.contrib.staticfiles.utils import get_files
 from django.core.handlers.wsgi import get_path_info
 from django.shortcuts import render
 from django.http import HttpResponse
-import tkinter
 import json
-from tkinter import *
 from tkinter import messagebox
 
 
-def home(request):
-    return render(request, 'homepage.html')
+def home(response):
+    return render(response, 'homepage.html', {})
 
-def guide(request):
-    return render(request, 'guide.html')
+def guide(response):
+    return render(response, 'guide.html', {})
 
-def start(request):
-    return render(request, 'qrdata.html')
+def qrdata(response):
+    return render(response, 'qrdata.html', {})
 
-def code(request):
-    return render(request, 'qrcode.html')
+def code(response):
+    return render(response, 'qrcode.html', 
