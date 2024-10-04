@@ -11,6 +11,7 @@ body {
       background-color: #074f57;
       background-size: cover;
       padding-top: 75px;
+      padding-bottom: 78.8px;
 }
 
 .guide {
@@ -70,8 +71,6 @@ body {
          text-align: center;
          font-family: system-ui;
          font-size: 14px;
-         height: 100%;
-         min-height: 1000px;
 }
 
 .qrdata_hs {
