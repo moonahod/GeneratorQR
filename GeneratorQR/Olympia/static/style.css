@@ -10,12 +10,7 @@ body {
       background-image: url("media/smooth_bg.jpg");
       background-color: #074f57;
       background-size: cover;
-      padding-top: 50px;
-}
-
-.home .logo {
-    height: 26%;
-    width: 26%;
+      padding-top: 75px;
 }
 
 .guide {
