@@ -1,0 +1,141 @@
+body {
+     margin: 0;
+     font-family: monospace;
+     font-size: 14pt;
+     margin: 0px;
+     margin-bottom: 0px;
+}
+
+.home {
+      background-image: url("media/smooth_bg.jpg");
+      background-color: #074f57;
+      background-size: cover;
+      padding-top: 50px;
+}
+
+.home .logo {
+    height: 26%;
+    width: 26%;
+}
+
+.guide {
+     background-image: url("media/highway_at_night.jpg");
+     background-color: #074f57;
+     background-size: cover;
+     padding-top: 150px;
+     padding-bottom: 158.9px;
+}
+
+.qrdata {
+    background-image: url("media/soft_green_bg.jpg");
+    background-color: #074f57;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 216.7px;
+}
+
+
+.bar1, .bar2, .bar3 {
+                    width: 37px;
+                    height: 6px;
+                    background-color: #000000;
+                    margin: 7px 0;
+                    transition: 0,5s;
+}
+
+.transform .bar1 {
+                 transform: translate(0, 12.6px) rotate(-45deg);
+}
+
+.transform .bar2 {
+                 opacity: 0;
+}
+
+.transform .bar3 {
+                 transform: translate(0, -12.6px) rotate(45deg);
+}
+
+
+.guide_hs {
+    color: #D3D3D3;
+    text-align: center;
+    font-family: system-ui;
+    font-size: 15px
+    }
+
+.guide_ps {
+    color: #bab4a4;
+    text-align: center;
+    font-family: monospace;
+    font-size: 14pt;
+}
+
+.home_hs {
+         color: #3b3b3b;
+         text-align: center;
+         font-family: system-ui;
+         font-size: 14px;
+         height: 100%;
+         min-height: 1000px;
+}
+
+.qrdata_hs {
+    color: #3b3b3b;
+    text-align: center;
+    font-family: system-ui;
+    font-size: 19px;
+}
+
+.container {
+           display: inline-block;
+           cursor: pointer;
+           margin: 4px 6px;
+           position: absolute;
+           top: 14px;
+           left: 19px;
+}
+
+.guideBtn {
+     border: 1;
+     color: white;
+     background-color: #6EC175;
+     padding: 12px 30px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-family: monospace;
+     font-size: 18px;
+     border-radius: 4px;
+     margin: 50px 535px;
+     cursor: pointer;
+}
+
+.homeBtn {
+     border: 1;
+     color: white;
+     background-color: #4e97c3;
+     padding: 3px 25px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-family: "Arial Black";
+     font-size: 17px;
+     border-radius: 4px;
+     margin: 50px 494px;
+     cursor: pointer;
+}
+
+.genBtn {
+    border: 1;
+    color: white;
+    background-color: #60d1d4;
+    padding: 4px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 41px 493px;
+    cursor: pointer;
+}
