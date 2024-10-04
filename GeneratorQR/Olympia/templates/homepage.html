@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
-    <link rel="stylesheet" href="../css/style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="home home_hs">
-        <img src="../media/logo.png" width="26%" height="26%">
+    <div class="home home_hs logo">
+        <img src="media/logo.png" class="logo">
         <h1>Welcome to our QR code machine!</h1>
         <a href="guide.html">
-            <button class="home_button">Start!</button>
+            <button class="homeBtn">Start!</button>
         </a>
         <div class="container" onclick="Function1(this)">
             <div class="bar1"></div>
