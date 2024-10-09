@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Making QR code</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block body %}
+
     <div class="qrdata qrdata_hs">
         <h1>Start making your qrcode</h1>
         <form>
             <label for="qrdata">Put data you want to code here:</label><br>
-            <input type="text" id="qrdata" name="qrdata"><br>
+            <input type="text" id="qrdata" name="qrdata" value="Example input"><br>
         </form>
 
         <form>
@@ -33,5 +27,5 @@
             }
         </script>
     </div>
-</body>
-</html>
+
+{% endblock %}
