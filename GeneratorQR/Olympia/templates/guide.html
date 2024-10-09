@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="IBM868">
-    <title>Guide</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block body %}
+
     <div class="guide guide_hs">
         <div class="guide_hs">
             <h1>The guide</h1>
@@ -20,5 +14,5 @@
                     <button class="guideBtn">Got it!</button>
                 </a>
     </div>
-</body>
-</html>
+
+{% endblock %}
