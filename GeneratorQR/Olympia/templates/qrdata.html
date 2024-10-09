@@ -16,16 +16,7 @@
             <input type="radio" id="png" name="fileFormat" value="png">
             <label for="png">.png</label><br>
         </form>
-        <button class="genBtn"
-                onclick="getData(this)">Generate
-        </button>
-
-        <script>
-            let getData = button => {
-                let data = document.getElementById('qrdata');
-                alert(data);
-            }
-        </script>
+        <input type="submit" class="genBtn" value="Generate">
     </div>
 
 {% endblock %}
