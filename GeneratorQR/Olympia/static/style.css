@@ -10,18 +10,24 @@ body {
       background-image: url("media/smooth_bg.jpg");
       background-color: #074f57;
       background-size: cover;
+      padding-top: 75px;
+      padding-bottom: 78.8px;
 }
 
 .guide {
      background-image: url("media/highway_at_night.jpg");
      background-color: #074f57;
      background-size: cover;
+     padding-top: 150px;
+     padding-bottom: 158.9px;
 }
 
 .qrdata {
     background-image: url("media/soft_green_bg.jpg");
     background-color: #074f57;
     background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 216.7px;
 }
 
 
