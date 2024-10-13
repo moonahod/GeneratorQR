@@ -4,19 +4,17 @@
 
     <div class="qrdata qrdata_hs">
         <h1>Start making your qrcode</h1>
-        <form>
+        <form method="post" enctype="multipart/form-data" action="" onsubmit="return gencode">
             <label for="qrdata">Put data you want to code here:</label><br>
             <input type="text" id="qrdata" name="qrdata" value="Example input"><br>
-        </form>
 
-        <form>
             <label for="poll">Choose file format for your code</label><br>
             <input type="radio" id="jpg" name="fileFormat" value="jpg">
             <label for="jpg">.jpg</label><br>
             <input type="radio" id="png" name="fileFormat" value="png">
             <label for="png">.png</label><br>
         </form>
-        <input type="submit" class="genBtn" value="Generate">
+        <input id="submit" type="submit" class="genBtn" value="Generate" />
     </div>
 
 {% endblock %}
