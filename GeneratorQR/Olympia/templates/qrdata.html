@@ -4,27 +4,20 @@
 
     <div class="qrdata qrdata_hs">
         <h1>Start making your qrcode</h1>
-        <form method="POST" enctype="multipart/form-data">
+        <form action="../code/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="qrdata">Put data you want to code here:</label><br>
             <input type="text" id="qrdata" name="gencode" value="Example input"><br>
 
+            <!--
             <label for="poll">Choose file format for your code</label><br>
             <input type="radio" id="jpg" name="fileFormat" value="jpg">
             <label for="jpg">.jpg</label><br>
             <input type="radio" id="png" name="fileFormat" value="png">
             <label for="png">.png</label><br>
-            <input id="submit" type="submit" onclick="gencode()" class="genBtn" value="Generate" />
+            -->
+            <input id="submit" type="submit" class="genBtn" value="Generate" />
         </form>
-
-        <script>
-         def gencode() {
-            if request.method == 'POST':
-
-            return render(request, 'qrcode.html', {})
-         }
-        </script>
-
     </div>
 
 {% endblock %}
