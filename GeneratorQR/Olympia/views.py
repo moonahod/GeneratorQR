@@ -16,9 +16,6 @@ def home(response):
 def guide(response):
     return render(response, 'guide.html', {})
 
-#def qrdata(response):
-#    return render(response, 'qrdata.html', {})
-
 def qrdata(response):
     return render(response, 'qrdata.html', {})
     #if response.method == 'POST':
@@ -30,9 +27,14 @@ def qrdata(response):
     #return redirect('../code/')
     #return render(request, 'qrdata.html', {})
 
-def gencode(request):
-    if request.method == 'POST':
-        data = request.POST.get('qrdata')
+#def gencode(request):
+#    if request.method == 'POST':
+#        qr = qrcode.QRCode(version=1, box_size=10, border=5)
+#        data = request.POST.get('qrdata')
+#        qr.add_data(data)
+#        qr.make(fit=True)
+#        img = qr.make_image(fill_color="black", back_color="white")
+#        img.save("qrcode.png")
         #qr = qrcode.QRCode(
 
         #)
@@ -40,7 +42,15 @@ def gencode(request):
         #code = qr.make_image()
         #code.save('1.png')
 
-    return render(request, 'qrcode.html', {})
+#    return render(request, 'qrcode.html', {})
 
-def code(response):
-    return render(response, 'qrcode.html', {})
+def code(request):
+    if request.method == 'POST':
+        qr = qrcode.QRCode(version=1, box_size=10, border=5)
+        data = request.POST.get('qrdata')
+        qr.add_data(data)
+        qr.make(fit=True)
+        img = qr.make_image(fill_color="black", back_color="white")
+        img.save("qrcode.png")
+
+    return render(request, 'qrcode.html', {})
