@@ -2,12 +2,15 @@
 
 {% block body %}
 
-    <div class="qrdata qrdata_hs">
+<div class="qrdata">
+    <div class="qrdata_hs">
         <h1>Start making your qrcode</h1>
         <form action="../code/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="qrdata">Put data you want to code here:</label><br>
-            <input type="text" id="qrdata" name="qrdata" value="Example input"><br>
+            <input type="text" id="qrdata" name="qrdata"><br>
+            <label for="qrdata">Enter the name of the file to save your code in:</label><br>
+            <input type="text" id="filename" name="filename">
 
             <!--
             <label for="poll">Choose file format for your code</label><br>
