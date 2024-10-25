@@ -6,8 +6,10 @@ from django.contrib.staticfiles.utils import get_files
 from django.core.handlers.wsgi import get_path_info
 from django.shortcuts import render, redirect
 import qrcode
+from PIL import ImageTk, Image
 #from .models import Draft
 from django.http import HttpResponse
+from qrcode.console_scripts import error_correction
 
 
 def home(response):
@@ -48,7 +50,15 @@ def code(request):
     if request.method == 'POST':
         print("succes!")
         data = request.POST.get('qrdata')
-        print(data)
+        print('data to code: ', data)
+        filename = request.POST.get('filename')
+        print('filename: ', filename)
+        qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+        qr.add_data(data)
+        qr.make(fit=True)
+        img = qr.make_image(fill_color="black", back_color="white")
+        type(img)
+        img.save('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
     return render(request, 'qrcode.html', {})
     #return redirect('../code/')
 #        qr = qrcode.QRCode(version=1, box_size=10, border=5)
