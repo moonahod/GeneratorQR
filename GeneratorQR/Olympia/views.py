@@ -10,6 +10,7 @@ from PIL import ImageTk, Image
 #from .models import Draft
 from django.http import HttpResponse
 from qrcode.console_scripts import error_correction
+from typing_extensions import final
 
 
 def home(response):
@@ -60,6 +61,8 @@ def code(request):
         type(img)
         img.save('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
     return render(request, 'qrcode.html', {})
+        #final_code = ('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
+        #return (final_code)
     #return redirect('../code/')
 #        qr = qrcode.QRCode(version=1, box_size=10, border=5)
  #       data = request.POST.get('qrdata')
