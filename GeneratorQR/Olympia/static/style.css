@@ -1,28 +1,38 @@
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+
 body {
      margin: 0;
      font-family: monospace;
      font-size: 14pt;
-     margin: 0px;
-     margin-bottom: 0px;
+     min-height: 100%;
+     width: 100%;
 }
 
 .home {
-      background-image: url("media/smooth_bg.jpg");
-      background-color: #074f57;
-      background-size: cover;
-      padding-top: 75px;
-      padding-bottom: 78.8px;
+    margin: 0px;
+    background-image: url("media/smooth_bg.jpg");
+    background-color: #074f57;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 200px;
+
 }
 
 .guide {
-     background-image: url("media/highway_at_night.jpg");
-     background-color: #074f57;
-     background-size: cover;
-     padding-top: 150px;
-     padding-bottom: 158.9px;
+    size: cover;
+    background-image: url("media/highway_at_night.jpg");
+    background-color: #074f57;
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 158.9px;
 }
 
 .qrdata {
+    size: cover;
     background-image: url("media/soft_green_bg.jpg");
     background-color: #074f57;
     background-size: cover;
@@ -30,6 +40,14 @@ body {
     padding-bottom: 216.7px;
 }
 
+.qrcode {
+    margin: 0;
+    background-image: url("media/ferrari-f40-3.jpg");
+    background-size: cover;
+    background-color: #074f57;
+    padding-top: 150px;
+    padding-bottom: 420px;
+}
 
 .bar1, .bar2, .bar3 {
                     width: 37px;
@@ -71,6 +89,9 @@ body {
          text-align: center;
          font-family: system-ui;
          font-size: 14px;
+         margin: 0px;
+         height: 100%;
+         width: 100%;
 }
 
 .qrdata_hs {
@@ -78,6 +99,14 @@ body {
     text-align: center;
     font-family: system-ui;
     font-size: 22px;
+}
+
+.qrcode_hs {
+    color: #fff;
+    text-align: center;
+    font-family: monospace;
+    font-size: 28px;
+    padding-top: 135px;
 }
 
 .container {
