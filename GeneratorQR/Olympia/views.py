@@ -62,7 +62,10 @@ def code(request):
         img = qr.make_image(fill_color="black", back_color="white")
         type(img)
         finalcode = img.save('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
-    return render(request, 'qrcode.html', finalcode)
+        context ={
+            'code1': finalcode
+        }
+    return render(request, 'qrcode.html', context)
         #final_code = ('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
         #return (final_code)
     #return redirect('../code/')
