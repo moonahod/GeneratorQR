@@ -1,4 +1,6 @@
+from fileinput import filename
 from http.client import responses
+from lib2to3.fixes.fix_input import context
 from pkgutil import get_data
 from sysconfig import get_path
 
@@ -59,8 +61,8 @@ def code(request):
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
         type(img)
-        img.save('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
-    return render(request, 'qrcode.html', {})
+        finalcode = img.save('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
+    return render(request, 'qrcode.html', finalcode)
         #final_code = ('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
         #return (final_code)
     #return redirect('../code/')
