@@ -63,7 +63,7 @@ def code(request):
         type(img)
         name = (filename + '.jpg')
         finalcode = img.save('../GeneratorQR/Olympia/codes/' + name)
-        path = ('../Olympia/codes/' + name)
+        path = ('/codes/' + name)
         context = {
             'code1': path
         }
