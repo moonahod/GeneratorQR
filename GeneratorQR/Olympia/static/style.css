@@ -43,7 +43,7 @@ body {
 
 .qrcode {
     margin: 0;
-    background-image: url("media/ferrari-f40-3.jpg");
+    background-image: url("media/dark_bg.jpg");
     background-size: cover;
     background-color: #074f57;
     padding-top: 150px;
