@@ -64,8 +64,10 @@ def code(request):
         name = (filename + '.jpg')
         finalcode = img.save('../GeneratorQR/Olympia/codes/' + name)
         path = ('/codes/' + name)
+        test_image = ('/static/media/giulia_so_loved.jpg')
         context = {
-            'code1': path
+            'code1': path,
+            'test_img': test_image
         }
     return render(request, 'qrcode.html', context)
         #final_code = ('../GeneratorQR/Olympia/codes/' + filename + '.jpg')
