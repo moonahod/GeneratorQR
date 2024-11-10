@@ -2,9 +2,25 @@
 
 {% block body %}
 
-    <div class="home home_hs logo">
-        <img src="../static/media/logo.png/" height="26%" width="26%">
-        <h1>Welcome to our QR code machine!</h1>
+    <div class="home home_hs">
+        <h1>Create your QR Code!</h1>
+        <div class="form_config">
+        <form action="code/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="qrdata">Put data you want to code here:</label><br>
+            <input type="text" id="qrdata" name="qrdata"><br>
+            <label for="qrdata">Enter the name of the file to save your code in:</label><br>
+            <input type="text" id="filename" name="filename">
+            <!--
+            <label for="poll">Choose file format for your code</label><br>
+            <input type="radio" id="jpg" name="fileFormat" value="jpg">
+            <label for="jpg">.jpg</label><br>
+            <input type="radio" id="png" name="fileFormat" value="png">
+            <label for="png">.png</label><br>
+            -->
+            <input id="submit" type="submit" class="genBtn" value="Generate" />
+        </form>
+        </div>
         <a href="guide/">
             <button class="homeBtn">Start!</button>
         </a>
