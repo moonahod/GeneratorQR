@@ -42,22 +42,21 @@ body {
 }
 
 .qrcode {
+    position: center;
     margin: 0;
     background-image: url("media/dark_bg.jpg");
+    text-align: center;
     background-size: cover;
     background-color: #074f57;
-    padding-top: 150px;
-    padding-bottom: 420px;
-    padding-left: 0px;
-    padding-right: 0px;
+    width: 100%;
 }
 
 .bar1, .bar2, .bar3 {
-                    width: 37px;
-                    height: 6px;
-                    background-color: #000000;
-                    margin: 7px 0;
-                    transition: 0,5s;
+    width: 37px;
+    height: 6px;
+    background-color: #000000;
+    margin: 7px 0;
+    transition: 1s;
 }
 
 .transform .bar1 {
@@ -109,9 +108,7 @@ body {
     text-align: center;
     font-family: monospace;
     font-size: 28px;
-    padding-top: 135px;
-    position: absolute;
-    z-index: 2;
+    padding-top: -50px;
 }
 
 .form_config {
@@ -172,7 +169,7 @@ body {
     cursor: pointer;
 }
 
-.downloadButton {
+.downloadBtn {
     border: 1;
     color: white;
     background-color: #caff33;
