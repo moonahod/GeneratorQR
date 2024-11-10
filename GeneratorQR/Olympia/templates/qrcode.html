@@ -2,11 +2,11 @@
 
 {% block body %}
 
-    <div class="qrcode qrcode_hs">
-        <h1>Here is your code!</h1>
+    <div class="qrcode">
+        <!--<h1 class="qrcode_hs">Here is your code!</h1>-->
         <img src="{{code1}}" width=26% height=26%>
 
-        <a href={{code1}} download="{{name}}" class="downloadButton" type="button">Download</a>
+        <a href={{code1}} download="{{name}}" class="downloadBtn" type="download">Download</a>
     </div>
 
 {% endblock %}
