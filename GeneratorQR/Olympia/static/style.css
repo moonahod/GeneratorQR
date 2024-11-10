@@ -17,7 +17,7 @@ body {
     background-image: url("media/smooth_bg.jpg");
     background-color: #074f57;
     background-size: cover;
-    padding-top: 52px;
+    padding-top: 13px;
     padding-bottom: 300px;
 }
 
@@ -48,6 +48,8 @@ body {
     background-color: #074f57;
     padding-top: 150px;
     padding-bottom: 420px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .bar1, .bar2, .bar3 {
@@ -86,13 +88,12 @@ body {
 }
 
 .home_hs {
-         color: #3b3b3b;
-         text-align: center;
-         font-family: system-ui;
-         font-size: 14px;
-         margin: 0px;
-         height: 100%;
-         width: 100%;
+    color: #3b3b3b;
+    font-family: system-ui;
+    font-size: 14px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
 }
 
 .qrdata_hs {
@@ -111,6 +112,12 @@ body {
     padding-top: 135px;
     position: absolute;
     z-index: 2;
+}
+
+.form_config {
+    margin-left: 20px;
+    text-align: left;
+    padding-left: 20px;
 }
 
 .container {
@@ -142,7 +149,6 @@ body {
      color: white;
      background-color: #4e97c3;
      padding: 3px 25px;
-     text-align: center;
      text-decoration: none;
      display: inline-block;
      font-family: "Arial Black";
@@ -157,7 +163,20 @@ body {
     color: white;
     background-color: #60d1d4;
     padding: 4px 24px;
-    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 41px 493px;
+    cursor: pointer;
+}
+
+.downloadButton {
+    border: 1;
+    color: white;
+    background-color: #caff33;
+    padding: 5px 22px;
     text-decoration: none;
     display: inline-block;
     font-family: monospace;
