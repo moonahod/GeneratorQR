@@ -2,28 +2,32 @@
 
 {% block body %}
 
-    <div class="home home_hs">
+    <div style="position: absolute; margin-top: 85px;
+            left: 40px; z-index:1;"  class="home">
         <h1>Create your QR Code!</h1>
-        <div class="form_config">
-        <form action="code/" method="POST" enctype="multipart/form-data">
+        <form action="../code/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <label for="qrdata">Put data you want to code here:</label><br>
-            <input type="text" id="qrdata" name="qrdata"><br>
+            <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata"></textarea><br>
             <label for="qrdata">Enter the name of the file to save your code in:</label><br>
-            <input type="text" id="filename" name="filename">
-            <!--
+            <textarea rows="1" cols="25" type="text" id="filename" name="filename"></textarea><br>
             <label for="poll">Choose file format for your code</label><br>
-            <input type="radio" id="jpg" name="fileFormat" value="jpg">
+            <input type="radio" id="jpg" name="fileFormat" value=".jpg">
             <label for="jpg">.jpg</label><br>
-            <input type="radio" id="png" name="fileFormat" value="png">
+            <input type="radio" id="png" name="fileFormat" value=".png">
             <label for="png">.png</label><br>
-            -->
+            <input type="radio" id="svg" name="fileFormat" value=".svg">
+            <label for="svg">.svg</label><br>
             <input id="submit" type="submit" class="genBtn" value="Generate" />
+            <!--<img src="{{code1}}" width=26% height=26%>-->
+            <div style="position: relative;">
+                <img src="{{code1}}" alt="Your QR code" style="position: absolute;
+                    margin-top: -365px; left: 710px; z-index:1;">
+                <a href={{code1}} download="{{name}}" style="position: absolute;
+                    margin-top: -34px; left: 310px; z-index:1;"
+                   class="downloadBtn" type="download">Download</a>
+            </div>
         </form>
-        </div>
-        <a href="guide/">
-            <button class="homeBtn">Start!</button>
-        </a>
     </div>
 
 {% endblock %}
