@@ -33,10 +33,11 @@ def code(request):
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
         type(img)
-        name = (filename + '.jpg')
+        fileFormat = request.POST.get('fileFormat')
+        name = (filename + fileFormat)
         finalcode = img.save('../GeneratorQR/Olympia/static/codes/' + name)
         path = ('/static/codes/' + name)
         context = {
             'code1': path,
         }
-    return render(request, 'qrcode.html', context)
+    return render(request, 'homepage.html', context)
