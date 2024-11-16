@@ -3,7 +3,97 @@ body, html {
     margin: 0;
     width: 100%;
     height: 100%;
+    font-family: "Ubuntu Mono";body, html {
+    background-color: #fff5be;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
     font-family: "Ubuntu Mono";
+    position: absolute;
+}
+
+.home {
+    h1 {
+        font-size: 34px;
+        color: #330703;
+    }
+    margin: 0;
+    min-height: 100%;
+    height: 1000px;
+    background-color: #fff5be;
+    background-size: cover;
+    text-align: left;
+    position: absolute;
+    padding: 0;
+}
+
+.qrcode {
+    position: center;
+    margin: 0;
+    background-image: url("media/dark_bg.jpg");
+    text-align: center;
+    background-size: cover;
+    background-color: #074f57;
+    width: 100%;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 37px;
+    height: 6px;
+    background-color: #000000;
+    margin: 7px 0;
+    transition: 0.85s;
+}
+
+.transform .bar1 {
+                 transform: translate(0, 12.6px) rotate(-45deg);
+}
+
+.transform .bar2 {
+                 transform: translate(0,0.6px) rotate(45deg);
+}
+
+.transform .bar3 {
+                 transform: translate(0, -12.6px) rotate(45deg);
+}
+
+.container {
+           display: inline-block;
+           cursor: pointer;
+           margin: 4px 6px;
+           position: absolute;
+           top: 14px;
+           left: 19px;
+}
+
+.genBtn {
+    border: 1;
+    color: white;
+    background-color: #4399de;
+    padding: 5.5px 22.5px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Ubuntu Mono";
+    font-size: 19.5px;
+    border-radius: 4px;
+    margin: 15px 0px;
+    cursor: crosshair;
+}
+
+.downloadBtn {
+    border: 1;
+    color: white;
+    background-color: #5cb85c;
+    padding: 5px 22px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 41px 493px;
+    cursor: pointer;
+}
     position: relative;
 }
 
