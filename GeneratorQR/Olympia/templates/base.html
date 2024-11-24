@@ -21,6 +21,33 @@
             }
         </script>
 
+
+        <div style="position: relative;" class="home">
+            <form style="position: relative; margin-top: 127px;
+                left: 68px; z-index:1;" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1 style="position: relative; margin-top: 110px; left: 68px; z-index:1;" >Create your QR Code!</h1>
+
+                <label for="qrdata">Put data you want to code here:</label><br>
+                <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata" value="{{data}}"></textarea><br>
+                <label for="qrdata">Enter the name of the file to save your code in:</label><br>
+                <textarea rows="1" cols="25" type="text" id="filename" name="filename" value="{{filename}}"></textarea><br>
+
+                <label for="poll">Choose file format for your code</label><br>
+
+                <input type="radio" id="jpg" name="fileFormat" value=".jpg">
+                <label for="jpg">.jpg</label><br>
+
+                <input type="radio" id="png" name="fileFormat" value=".png">
+                <label for="png">.png</label><br>
+
+                <input type="radio" id="webp" name="fileFormat" value=".webp">
+                <label for="webp">.webp</label><br>
+
+                <input id="submit" type="submit" class="genBtn" value="Generate" />
+            </form>
+        </div>
+
         {% block body %}
 
         {% endblock %}
