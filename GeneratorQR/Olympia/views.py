@@ -9,20 +9,12 @@ from django.shortcuts import render, redirect
 import qrcode
 from PIL import ImageTk, Image
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from qrcode.console_scripts import error_correction
 from typing_extensions import final
 
 
-def home(response):
-    return render(response, 'homepage.html', {})
-
-def guide(response):
-    return render(response, 'guide.html', {})
-
-def qrdata(response):
-    return render(response, 'qrdata.html', {})
-
-def code(request):
+def home(request):
     if request.method == 'POST':
         data = request.POST.get('qrdata')
         print('data to code: ', data)
@@ -40,4 +32,8 @@ def code(request):
         context = {
             'code1': path,
         }
-    return render(request, 'homepage.html', context)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+    #return redirect('/', {})
+
+    #return render(request, 'homepage.html', context)
