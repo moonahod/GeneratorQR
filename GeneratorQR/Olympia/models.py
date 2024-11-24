@@ -1,10 +1,10 @@
-from django.db import models
-import qrcode
+#from django.db import models
+#import qrcode
 
-class CodeQR(models.Model):
+#class CodeQR(models.Model):
 
-    def __str__(self):
-        return self.name
+    #def __str__(self):
+        #return self.name
 
     #data = request.POST.get('qrdata')
     #filename = request.POST.get('filename')
