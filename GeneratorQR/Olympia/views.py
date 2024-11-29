@@ -13,6 +13,8 @@ from django.http import HttpResponseRedirect
 from qrcode.console_scripts import error_correction
 from typing_extensions import final
 
+def code(response):
+    return redirect('')
 
 def home(request):
     if request.method == 'POST':
@@ -32,8 +34,10 @@ def home(request):
         context = {
             'code1': path,
         }
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    #return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
     #return redirect('/', {})
 
-    #return render(request, 'homepage.html', context)
+    return render(request, 'homepage.html', context)
+
+    #return HttpResponseRedirect('/')
