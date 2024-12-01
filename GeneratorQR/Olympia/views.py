@@ -1,5 +1,6 @@
 from http.client import responses
 from lib2to3.fixes.fix_input import context
+from os.path import pathsep
 from pkgutil import get_data
 from sysconfig import get_path
 
@@ -13,10 +14,10 @@ from django.http import HttpResponseRedirect
 from qrcode.console_scripts import error_correction
 from typing_extensions import final
 
-def code(response):
-    return redirect('')
 
 def home(request):
+    render(request, 'homepage.html')
+    viaggio = 1
     if request.method == 'POST':
         data = request.POST.get('qrdata')
         print('data to code: ', data)
@@ -33,11 +34,11 @@ def home(request):
         path = ('/static/codes/' + name)
         context = {
             'code1': path,
+            'data_check': len('code1') > 10,
         }
-    #return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        return render(request, 'homepage.html', context)
+    else:
+        return render(request, 'homepage.html')
 
-    #return redirect('/', {})
-
-    return render(request, 'homepage.html', context)
-
-    #return HttpResponseRedirect('/')
+#def code(response):
+    #return render(response, 'homepage.html')
