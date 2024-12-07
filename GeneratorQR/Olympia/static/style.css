@@ -1,5 +1,5 @@
 body, html {
-    background-color: #e7ebed;
+    background-color: #fff;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -16,7 +16,7 @@ body, html {
     margin: 0;
     min-height: 100%;
     height: 1000px;
-    background-color: #e7ebed;
+    background-color: #caff33;
     background-size: cover;
     text-align: left;
     position: absolute;
