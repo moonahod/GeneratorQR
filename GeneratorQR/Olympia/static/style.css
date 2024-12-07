@@ -34,12 +34,12 @@ body, html {
 }
 
 /*#sidebar {
-    position: absolute;
-    width: 300px;
+    position: relative;
+    width: 200px;
     height: 100%;
     background: #000;
     left: -300px;
-    transition: .4s;
+    transition: 0.4s;
 }
 
 #sidebar ul li {
@@ -49,15 +49,24 @@ body, html {
     padding: 26px 24px;
 }
 
-#sidebar.active {
-    left: 0;
-}
-
-#sidebar .bar1, bar2, bar3 {
+#sidebar .toggle-btn {
     position: absolute;
     top: 30px;
     left: 330px;
-}*/
+}
+
+.toggle-btn span {
+    width: 45px;
+    height: 4px;
+    background: #000;
+    display: block;
+    margin-top: 4px;
+}
+
+#sidebar.active {
+    left: 0;
+}
+*/
 
 .bar1, .bar2, .bar3 {
     width: 37px;
