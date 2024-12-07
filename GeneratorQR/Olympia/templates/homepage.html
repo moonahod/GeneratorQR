@@ -2,11 +2,11 @@
 
 {% block body %}
 
-        <div style="position: relative;" class="home">
-            <form style="position: relative; margin-top: 127px;
+        <div style="position: static;" class="home">
+            <h1 style="position: absolute; top: 90px; left: 68px; z-index:1;">Create your QR Code!</h1>
+            <form style="position: absolute; top: 185px;
                 left: 68px; z-index:1;" action="/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <h1 style="position: relative; margin-top: 110px; left: 68px; z-index:1;" >Create your QR Code!</h1>
 
                 <label for="qrdata">Put data you want to code here:</label><br>
                 <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata" value="{{data}}"></textarea><br>
@@ -28,16 +28,17 @@
 
                 {% if data_check %}
 
-                <img src="{{code1}}" alt="QQR code" style="position: relative;
-                    margin-top: -320px; left: 570px; z-index:1;">
+                <img src="{{code1}}" alt="QQR code" style="position: absolute;
+                    top: 0px; left: 650px; z-index:1;">
                 <a href={{code1}} download="{{name}}" style="position: relative;
                     margin-top: -200px; left: 250px; z-index:1;"
                 class="downloadBtn" type="download">Download</a>
 
                 {% else %}
 
-                <img src="../static/codes/Hello.jpg" style="position: relative;
-                    margin-top: -320px; left: 570px; z-index:1;">
+                <h1 style="position: absolute; top: 90px; left: 68px; z-index:1;">Code example:</h1>
+                <img src="../static/codes/Hello.jpg" style="position: absolute;
+                    top: 0px; left: 680px; z-index:1;">
 
                 {% endif %}
 
