@@ -3,9 +3,9 @@
 {% block body %}
 
         <div style="position: static;" class="home">
-            <h1 style="position: absolute; top: 90px; left: 68px; z-index:1;">Create your QR Code!</h1>
+            <h1 style="position: absolute; top: 90px; left: 80px; z-index:1;">Create your QR Code!</h1>
             <form style="position: absolute; top: 185px;
-                left: 68px; z-index:1;" action="/" method="POST" enctype="multipart/form-data">
+                left: 80px; z-index:1;" action="/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <label for="qrdata">Put data you want to code here:</label><br>
@@ -31,7 +31,7 @@
                 <img src="{{code1}}" alt="QQR code" style="position: absolute;
                     top: 0px; left: 650px; z-index:1;">
                 <a href={{code1}} download="{{name}}" style="position: relative;
-                    top: 35px; left: 50px; z-index:1;"
+                    top: 35px; left: 280px; z-index:1;"
                 class="downloadBtn" type="download">Download</a>
 
                 {% else %}
