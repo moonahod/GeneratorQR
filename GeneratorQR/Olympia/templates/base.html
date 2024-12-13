@@ -9,38 +9,21 @@
     </head>
 
     <body>
-        <!--<div id="sidebar">
-            <div class="toggle-btn" onclick ="show()">
-                <span></span>
-                <span></span>
-                <span></span>
 
+        <div id="sidebar">
+            <div class="container" onclick="Function1(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </div>
-
-            <ul>
-                <li>About</li>
-                <li>Credits</li>
-                <li>Contacts</li>
-            </ul>
-
-            <script>
-                function show() {
-                    document.getElementById('sidebar').classList.toggle('active');
-                }
-            </script>-->
-
-    <div id="sidebar">
-        <div class="container" onclick="Function1(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
         </div>
-    </div>
-        <script>
-            function Function1(x) {
-            x.classList.toggle("transform");
-            }
-        </script>
+            <script>
+                function Function1(x) {
+                    document.getElementById('sidebar').classList.toggle('active');
+                    x.classList.toggle("transform");
+                }
+            </script>
+
         {% block body %}
 
         {% endblock %}
