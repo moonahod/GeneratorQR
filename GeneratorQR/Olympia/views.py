@@ -16,7 +16,6 @@ from typing_extensions import final
 
 
 def home(request):
-    #render(request, 'homepage.html')
     if request.method == 'POST':
         data = request.POST.get('qrdata')
         print('data to code: ', data)
@@ -34,10 +33,10 @@ def home(request):
         context = {
             'code1': path,
             'data_check': len(path) > 10,
+            #'last_data': data,
+            #'last_filename': filename,
+            #'last_fileFormat': fileFormat,
         }
         return render(request, 'homepage.html', context)
     else:
         return render(request, 'homepage.html')
-
-#def code(response):
-    #return render(response, 'homepage.html')
