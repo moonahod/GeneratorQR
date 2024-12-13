@@ -6,6 +6,7 @@ body, html {
     min-height: 100%;
     font-family: "Ubuntu Mono";
     position: absolute;
+    z-index: 1;
 }
 
 .home {
@@ -20,6 +21,7 @@ body, html {
     background-size: cover;
     text-align: left;
     position: absolute;
+    z-index: 1;
     padding: 0;
 }
 
@@ -33,47 +35,39 @@ body, html {
     width: 100%;
 }
 
-/*#sidebar {
+#sidebar {
     position: relative;
-    width: 200px;
-    height: 100%;
-    background: #000;
-    left: -300px;
-    transition: 0.4s;
+    z-index: 2;
+    width: 400px;
+    left: -400px;
+    transition: 0.6s;
+    background-color: #1e2124;
 }
 
-#sidebar ul li {
+/*#sidebar ul li {
     list-style: none;
     color: #fff;
     font-size: 20px;
     padding: 26px 24px;
-}
+}*/
 
-#sidebar .toggle-btn {
-    position: absolute;
-    top: 30px;
-    left: 330px;
-}
-
-.toggle-btn span {
-    width: 45px;
-    height: 4px;
-    background: #000;
+.container .bar1, .bar2, .bar3 {
     display: block;
-    margin-top: 4px;
-}
-
-#sidebar.active {
-    left: 0;
-}
-*/
-
-.bar1, .bar2, .bar3 {
+    cursor: pointer;
+    margin: 4px 6px;
+    position: absolute;
+    top: 14px;
+    left: 19px;
     width: 37px;
     height: 6px;
-    background-color: #000000;
-    margin: 7px 0;
+    background-color: #000;
     transition: 0.85s;
+}
+
+#sidebar .container {
+    position: absolute;
+    top: 30px;
+    left: 400px;
 }
 
 .transform .bar1 {
@@ -88,13 +82,8 @@ body, html {
     transform: translate(0, -12.6px) rotate(45deg);
 }
 
-.container {
-    display: inline-block;
-    cursor: pointer;
-    margin: 4px 6px;
-    position: absolute;
-    top: 14px;
-    left: 19px;
+#sidebar.active {
+    left: 0;
 }
 
 .genBtn {
