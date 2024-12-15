@@ -3,7 +3,7 @@
     <head>
         {% load static %}
         <meta charset="UTF-8">
-        <title>Absolute machine</title>
+        <title>Absolute QR machine</title>
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     </head>
@@ -12,10 +12,17 @@
 
         <div id="sidebar">
             <div class="container" onclick="Function1(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+                <div class="bar1" style="position: fixed; top: 20px; left: 21px;"></div>
+                <div class="bar2" style="position: fixed; top: 33px; left: 21px;"></div>
+                <div class="bar3" style="position: fixed; top: 46px; left: 21px;"></div>
             </div>
+
+            <ul style="display: block;">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contacts</a></li>
+            </ul>
+
         </div>
             <script>
                 function Function1(x) {
