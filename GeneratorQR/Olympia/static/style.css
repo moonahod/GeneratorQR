@@ -7,6 +7,7 @@ body, html {
     font-family: "Ubuntu Mono";
     position: absolute;
     z-index: 1;
+    scroll-behaviour: smooth;
 }
 
 .home {
@@ -15,9 +16,9 @@ body, html {
         color: #330703;
     }
     margin: 0;
+    background-color: #caff33;
     min-height: 100%;
     height: 1000px;
-    background-color: #caff33;
     background-size: cover;
     text-align: left;
     position: absolute;
@@ -25,42 +26,43 @@ body, html {
     padding: 0;
 }
 
-.qrcode {
-    position: center;
-    margin: 0;
-    background-image: url("media/dark_bg.jpg");
-    text-align: center;
-    background-size: cover;
-    background-color: #074f57;
-    width: 100%;
+#sidebar ul li {
+    list-style: none;
+    color: #efe7df;
+    font-size: 27px;
+    font-weight: bold;
+    padding: 20px 60px;
+}
+
+#sidebar a {
+    color: #fff;
 }
 
 #sidebar {
-    position: relative;
+    position: fixed;
     z-index: 2;
     width: 400px;
     left: -400px;
+    height: 100%;
     transition: 0.6s;
     background-color: #1e2124;
 }
 
-/*#sidebar ul li {
-    list-style: none;
-    color: #fff;
-    font-size: 20px;
-    padding: 26px 24px;
-}*/
+#sidebar.active {
+    left: 0;
+}
 
-.container .bar1, .bar2, .bar3 {
+.container .bar1, .bar2, .bar3{
     display: block;
     cursor: pointer;
     margin: 4px 6px;
-    position: absolute;
+    position: fixed;
     top: 14px;
     left: 19px;
-    width: 37px;
-    height: 6px;
-    background-color: #000;
+    z-index: 3;
+    width: 39px;
+    height: 6.5px;
+    background-color: #1e2124;
     transition: 0.85s;
 }
 
@@ -71,15 +73,18 @@ body, html {
 }
 
 .transform .bar1 {
-    transform: translate(0, 12.6px) rotate(-45deg);
+    transform: translate(0, 12.3px) rotate(-45deg);
+    background-color: #caff33;
 }
 
 .transform .bar2 {
-    transform: translate(0,0.6px) rotate(45deg);
+    transform: translate(0,0.21px) rotate(45deg);
+    background-color: #caff33;
 }
 
 .transform .bar3 {
-    transform: translate(0, -12.6px) rotate(45deg);
+    transform: translate(0, -13px) rotate(45deg);
+    background-color: #caff33;
 }
 
 #sidebar.active {
@@ -89,27 +94,28 @@ body, html {
 .genBtn {
     border: 1;
     color: white;
-    background-color: #4399de;
+    background-color: #1b71f2;
     padding: 5.5px 22.5px;
-    text-decoration: none;
+    text-weight: bold;
     display: inline-block;
-    font-family: "Ubuntu Mono";
+    font-family: monospace;
     font-size: 19.5px;
-    border-radius: 4px;
+    border-radius: 5.5px;
     margin: 15px 0px;
-    cursor: crosshair;
+    cursor: pointer;
 }
 
 .downloadBtn {
     border: 1;
     color: white;
-    background-color: #5cb85c;
+    background-color: #1bf251;
     padding: 5px 22px;
     text-decoration: none;
+    text-weight: bold;
     display: inline-block;
     font-family: monospace;
     font-size: 16px;
-    border-radius: 4px;
-    margin: 41px 493px;
+    border-radius: 5.5px;
+    margin: 0px 491px;
     cursor: pointer;
 }
