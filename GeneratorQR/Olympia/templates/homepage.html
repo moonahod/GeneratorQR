@@ -9,9 +9,11 @@
                 {% csrf_token %}
 
                 <label for="qrdata">Put data you want to code here:</label><br>
-                <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata" value="{{data}}"></textarea><br>
+                <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata" value="{{data}}">
+                    </textarea><br>
                 <label for="qrdata">Enter the name of the file to save your code in:</label><br>
-                <textarea rows="1" cols="25" type="text" id="filename" name="filename" value="{{filename}}"></textarea><br>
+                <textarea rows="1" cols="25" type="text" id="filename" name="filename" value="{{filename}}">
+                    </textarea><br>
 
                 <label for="poll">Choose file format for your code</label><br>
 
@@ -29,9 +31,9 @@
                 {% if data_check %}
 
                 <img src="{{code1}}" alt="QQR code" style="position: absolute;
-                    top: 0px; left: 650px; z-index:1;">
+                    top: 0px; left: 683px; z-index:1;">
                 <a href={{code1}} download="{{name}}" style="position: relative;
-                    top: 35px; left: 280px; z-index:1;"
+                    top: 10px; left: 280px; z-index:1;"
                 class="downloadBtn" type="download">Download</a>
 
                 {% else %}
