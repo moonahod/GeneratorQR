@@ -7,7 +7,7 @@ body, html {
     font-family: "Ubuntu Mono";
     position: absolute;
     z-index: 1;
-    scroll-behaviour: smooth;
+    scroll-behavior: smooth;
 }
 
 .home {
@@ -15,15 +15,21 @@ body, html {
         font-size: 34px;
         color: #330703;
     }
+    p {
+        font-size: 20px;
+        color: #000;
+        text-align: inline;
+    }
     margin: 0;
     background-color: #caff33;
     min-height: 100%;
-    height: 1000px;
+    height: 3000px;
     background-size: cover;
     text-align: left;
     position: absolute;
     z-index: 1;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 #sidebar ul li {
@@ -41,8 +47,8 @@ body, html {
 #sidebar {
     position: fixed;
     z-index: 2;
-    width: 400px;
-    left: -400px;
+    width: 350px;
+    left: -350px;
     height: 100%;
     transition: 0.6s;
     background-color: #1e2124;
@@ -52,7 +58,14 @@ body, html {
     left: 0;
 }
 
-.container .bar1, .bar2, .bar3{
+a {
+    height: 8.5px;
+    width: 42px;
+}
+
+.container .bar1,
+.container .bar2,
+.container .bar3 {
     display: block;
     cursor: pointer;
     margin: 4px 6px;
@@ -69,7 +82,7 @@ body, html {
 #sidebar .container {
     position: absolute;
     top: 30px;
-    left: 400px;
+    left: 350px;
 }
 
 .transform .bar1 {
