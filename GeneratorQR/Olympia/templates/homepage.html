@@ -2,8 +2,8 @@
 
 {% block body %}
 
-        <div style="position: static;" class="home">
-            <h1 style="position: absolute; top: 90px; left: 80px; z-index:1;">Create your QR Code!</h1>
+        <div style="position: static; scroll-behavior: smooth" class="home">
+            <h1 id="home" style="position: absolute; top: 90px; left: 80px; z-index:1;">Create your QR Code!</h1>
             <form style="position: absolute; top: 185px;
                 left: 80px; z-index:1;" action="/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -45,6 +45,27 @@
                 {% endif %}
 
             </form>
+
+            <h1 id="about" style="position: absolute;
+                top: 730px; left: 406px; z-index:1;">Something about our project</h1>
+
+            <p style="text-align: center; position: absolute; top: 825px; left: 390px; z-index:1;">The goal
+                of the QR machine<br> is to provide you just a convenient easy-to-use<br> ad-free website
+                to create qr codes<br> <br>=)</p>
+
+            <img src="">
+
+            <center><h1 id="contacts" style="position: absolute;
+                top: 1520px; left: 455px; z-index:1;">You can contact me</h1></center>
+
+            <p style="position: absolute; top: 1620px; left: 480px; z-index:1;"
+                ><a href="https://github.com/moonahod/GeneratorQR" target="_blank">
+                <img src="../static/media/github_for_link.png" style="height:25%; width:25%;"></a></p>
+
+            <p style="position: absolute; top: 1620px; left: 660px; z-index:1;"
+                ><a href="mailto:funfan733@gmail.com">
+                <img src="../static/media/super_email.png" style="height:17%; width:17%;"></a></p>
+
         </div>
 
 {% endblock %}
