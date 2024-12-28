@@ -3,9 +3,8 @@
 {% block body %}
 
         <div style="position: static; scroll-behavior: smooth" class="home">
-            <h1 id="home" style="position: absolute; top: 90px; left: 80px; z-index:1;">Create your QR Code!</h1>
-            <form style="position: absolute; top: 185px;
-                left: 80px; z-index:1;" action="/" method="POST" enctype="multipart/form-data">
+            <h1 class="h1_home" id="home">Create your QR Code!</h1>
+            <form class="form_home" action="/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <label for="qrdata">Put data you want to code here:</label><br>
@@ -30,41 +29,33 @@
 
                 {% if data_check %}
 
-                <img src="{{code1}}" alt="QQR code" style="position: absolute;
-                    top: 0px; left: 683px; z-index:1;">
-                <a href={{code1}} download="{{name}}" style="position: relative;
-                    top: 10px; left: 280px; z-index:1;"
-                class="downloadBtn" type="download">Download</a>
+                <img class="img_code1" src="{{code1}}" alt="QQR code">
+                <a href={{code1}} download="{{name}}" class="downloadBtn" type="download">Download</a>
 
                 {% else %}
 
-                <h1 style="position: absolute; top: -100px; left: 679px; z-index:1;">Code example:</h1>
-                <img src="../static/codes/Hello.jpg" style="position: absolute;
-                    top: 0px; left: 680px; z-index:1;">
+                <h1 class="h1_code_example">Code example:</h1>
+                <img class="default_qr_img" src="../static/codes/Hello.jpg">
 
                 {% endif %}
 
             </form>
 
-            <h1 id="about" style="position: absolute;
-                top: 730px; left: 406px; z-index:1;">Something about our project</h1>
+            <h1 class="h1_about" id="about">Something about our project</h1>
 
-            <p style="text-align: center; position: absolute; top: 825px; left: 390px; z-index:1;">The goal
+            <p class="p_about">The goal
                 of the QR machine<br> is to provide you just a convenient easy-to-use<br> ad-free website
                 to create qr codes<br> <br>=)</p>
 
             <img src="">
 
-            <center><h1 id="contacts" style="position: absolute;
-                top: 1520px; left: 455px; z-index:1;">You can contact me</h1></center>
+            <center><h1 class="h1_contacts" id="contacts">You can contact me</h1></center>
 
-            <p style="position: absolute; top: 1620px; left: 480px; z-index:1;"
-                ><a href="https://github.com/moonahod/GeneratorQR" target="_blank">
-                <img src="../static/media/github_for_link.png" style="height:25%; width:25%;"></a></p>
+            <p class="p_github"><a href="https://github.com/moonahod/GeneratorQR" target="_blank">
+                <img class="img_github" src="../static/media/github_for_link.png"></a></p>
 
-            <p style="position: absolute; top: 1620px; left: 660px; z-index:1;"
-                ><a href="mailto:funfan733@gmail.com">
-                <img src="../static/media/super_email.png" style="height:17%; width:17%;"></a></p>
+            <p class="p_mailto"><a href="mailto:funfan733@gmail.com">
+                <img class="img_mailto" src="../static/media/super_email.png"></a></p>
 
         </div>
 
