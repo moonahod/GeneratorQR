@@ -49,10 +49,19 @@ body, html {
     z-index:1;
 }
 
+.p_click {
+    text-weight: bold;
+    font-size: 12px;
+    display: inline;
+    position: relative;
+    top: -450px;
+    left: 450px;
+}
+
 .img_code1 {
     position: absolute;
-    top: 0px;
-    left: 683px;
+    top: -40px;
+    left: 610px;
     z-index:1;
 }
 
@@ -206,33 +215,28 @@ a {
 
 /*Two main buttons*/
 .genBtn {
-    border: 1;
     color: white;
     background-color: #1b71f2;
     padding: 5.5px 22.5px;
-    text-weight: bold;
-    display: inline-block;
     font-family: monospace;
     font-size: 19.5px;
-    border-radius: 5.5px;
     margin: 15px 0px;
     cursor: pointer;
 }
 
-.downloadBtn {
-    border: 1;
+/* now you can download code
+by clicking on it!.downloadBtn {
+    position: relative;
+    left: 646px;
+    padding: 10px 33px;
     color: white;
     background-color: #1bf251;
-    padding: 5px 22px;
     text-decoration: none;
-    text-weight: bold;
-    display: inline-block;
     font-family: monospace;
     font-size: 16px;
-    border-radius: 5.5px;
-    margin: 0px 491px;
     cursor: pointer;
-}
+}*/
+
 /*End of the main buttons*/
 
 /*Classes that should be changed when using the site on mobile*/
