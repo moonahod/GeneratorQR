@@ -33,6 +33,7 @@ def home(request):
         context = {
             'code1': path,
             'data_check': len(path) > 10,
+            'huge_code_check': len(data) > 58,
             #'last_data': data,
             #'last_filename': filename,
             #'last_fileFormat': fileFormat,
