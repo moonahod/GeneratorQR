@@ -1,6 +1,6 @@
 /* Essential basic styles*/
 body, html {
-    background-color: #fff;
+    background-color: #caff33;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -127,6 +127,7 @@ body, html {
 /*All stuff connected with sidebar menu and
 hamburger menu button*/
 #sidebar ul li {
+    display: block;
     list-style: none;
     color: #efe7df;
     font-size: 27px;
@@ -157,15 +158,18 @@ a {
     width: 42px;
 }
 
+.container {
+    margin-top: -14px;
+    margin-left: 20.5px;
+    cursor: pointer;
+    height: 48px;
+    width: 52px;
+}
+
 .container .bar1,
 .container .bar2,
-.container .bar3 {
-    display: block;
-    cursor: pointer;
+.container .bar3{
     margin: 4px 6px;
-    position: fixed;
-    top: 17px;
-    left: 21px;
     z-index: 3;
     width: 40px;
     height: 7.18px;
@@ -232,26 +236,14 @@ a {
 /*End of the main buttons*/
 
 /*Classes that should be changed when using the site on mobile*/
-@media only screen and (max-width: 600px) {
-    body, html {
-        background-color: #caff33;
-        margin: 0;
-        max-width: 600px;
-        height: 100%;
-        min-height: 100%;
-        font-family: "Ubuntu Mono";
-        position: absolute;
-        z-index: 1;
-        scroll-behavior: smooth;
-    }
-
+@media only screen and (max-width: 650px) {
     .home {
         h1 {
-            font-size: 29px;
+            font-size: 28px;
             color: #330703;
         }
         p {
-            font-size: 16px;
+            font-size: 19px;
             color: #000;
             text-align: inline;
         }
@@ -279,13 +271,13 @@ a {
     .form_home {
         position: absolute;
         top: 139px;
-        left: 27px;
+        left: 20px;
         z-index:1;
     }
 
     .img_code1 {
         position: absolute;
-        top: 0px;
+        top: 489px;
         left: 230px;
         z-index:1;
         width: 25%;
@@ -359,8 +351,8 @@ a {
     }
 
     .img_mailto {
-        height:40%;
-        width:40%;
+        height:25%;
+        width:25%;
     }
 
     /*All stuff connected with sidebar menu and
