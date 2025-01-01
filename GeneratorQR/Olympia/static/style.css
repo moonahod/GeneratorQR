@@ -131,6 +131,18 @@ body, html {
     height:17%;
     width:17%;
 }
+
+.p_qr_icon {
+    position: absolute;
+    top: -70px;
+    left: 700px;
+    z-index:1;
+}
+
+.img_qr_icon {
+    height: 30%;
+    width: 30%;
+}
 /*End of too many styles*/
 
 /*All stuff connected with sidebar menu and
