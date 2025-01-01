@@ -159,16 +159,16 @@ a {
 }
 
 .container {
-    margin-top: -14px;
-    margin-left: 20.5px;
     cursor: pointer;
-    height: 48px;
-    width: 52px;
+    height: 48.5px;
+    width: 52.5px;
+    z-index: 3;
+    /*background-color: blue;*/
 }
 
 .container .bar1,
 .container .bar2,
-.container .bar3{
+.container .bar3 {
     margin: 4px 6px;
     z-index: 3;
     width: 40px;
@@ -179,9 +179,9 @@ a {
 }
 
 #sidebar .container {
-    position: absolute;
-    top: 30px;
-    left: 350px;
+    position: fixed;
+    top: 17px;
+    left: 21px;
 }
 
 .transform .bar1 {
