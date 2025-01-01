@@ -8,7 +8,7 @@
                 {% csrf_token %}
 
                 <label for="qrdata">Put data you want to code here:</label><br>
-                <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata"></textarea><br>
+                <textarea rows="15" cols="65" type="text" id="qrdata" name="qrdata"></textarea><br>
                 <label for="qrdata">Enter the name of the file to save your code in:</label><br>
                 <textarea rows="1" cols="25" type="text" id="filename"
                           name="filename" value="{{filename}}"></textarea><br>
@@ -28,8 +28,10 @@
 
                 {% if data_check %}
 
-                <img class="img_code1" src="{{code1}}" alt="QQR code">
-                <a href={{code1}} download="{{name}}" class="downloadBtn" type="download">Download</a>
+                <p class="p_click">Download your code by clicking on it!</p>
+                <p class="img_code1"><a href={{code1}} download="{{name}}"><img src="{{code1}}"></a></p>
+                    <!--<a href={{code1}} download="{{name}}" class="downloadBtn"
+                    type="download">Download</a>-->
 
                 {% else %}
 
