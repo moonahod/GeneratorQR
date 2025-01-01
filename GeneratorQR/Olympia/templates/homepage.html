@@ -8,11 +8,10 @@
                 {% csrf_token %}
 
                 <label for="qrdata">Put data you want to code here:</label><br>
-                <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata" value="{{data}}">
-                    </textarea><br>
+                <textarea rows="15" cols="68" type="text" id="qrdata" name="qrdata"></textarea><br>
                 <label for="qrdata">Enter the name of the file to save your code in:</label><br>
-                <textarea rows="1" cols="25" type="text" id="filename" name="filename" value="{{filename}}">
-                    </textarea><br>
+                <textarea rows="1" cols="25" type="text" id="filename"
+                          name="filename" value="{{filename}}"></textarea><br>
 
                 <label for="poll">Choose file format for your code</label><br>
 
@@ -25,7 +24,7 @@
                 <input type="radio" id="webp" name="fileFormat" value=".webp">
                 <label for="webp">.webp</label><br>
 
-                <input id="submit" type="submit" class="genBtn" value="Generate" />
+                <input id="submit" onclick="myFunction()" type="submit" class="genBtn" value="Generate" />
 
                 {% if data_check %}
 
@@ -55,7 +54,7 @@
                 <img class="img_github" src="../static/media/github_for_link.png"></a></p>
 
             <p class="p_mailto"><a href="mailto:funfan733@gmail.com">
-                <img class="img_mailto" src="../static/media/super_email.png"></a></p>
+                <img class="img_mailto" src="../static/media/super_email_360x360.png"></a></p>
 
         </div>
 
