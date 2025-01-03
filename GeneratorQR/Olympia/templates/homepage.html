@@ -26,19 +26,18 @@
 
                 <input id="submit" onclick="myFunction()" type="submit" class="genBtn" value="Generate" />
 
-                {% if data_check %}
+                {% if huge_code_check %}
+
+                <p class="p_click">your qr code is too big for this page<br>download it by clicking this icon</p>
+                <p class="p_qr_icon"><a href="{{code1}}" download="{{name}}"><img
+                        class="img_qr_icon" src="../static/media/qr_code_icon.png"></a></p>
+
+                {% elif data_check %}
 
                 <p class="p_click">download your code by clicking on it!</p>
                 <p class="img_code1"><a href={{code1}} download="{{name}}"><img src="{{code1}}"></a></p>
                     <!--<a href={{code1}} download="{{name}}" class="downloadBtn"
                     type="download">Download</a>-->
-
-                {% elif data_check and huge_code_check %}
-
-                <p class="p_click"
-                >your qr code is too big for this page<br> download it by clicking file icon</p>
-                <p class="p_qr_icon"><a download="{{name}}"><img class="img_qr_icon"
-                        src="../static/media/qr_code_icon.jpg"></a></p>
 
                 {% else %}
 
