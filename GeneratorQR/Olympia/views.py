@@ -1,18 +1,5 @@
-from http.client import responses
-from lib2to3.fixes.fix_input import context
-from os.path import pathsep
-from pkgutil import get_data
-from sysconfig import get_path
-
-from django.contrib.staticfiles.utils import get_files
-from django.core.handlers.wsgi import get_path_info
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 import qrcode
-from PIL import ImageTk, Image
-from django.http import HttpResponse
-from django.http import HttpResponseRedirect
-from qrcode.console_scripts import error_correction
-from typing_extensions import final
 
 
 def home(request):
@@ -21,7 +8,7 @@ def home(request):
         print('data to code: ', data)
         filename = request.POST.get('filename')
         print('filename: ', filename)
-        qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+        qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M)
         qr.add_data(data)
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
@@ -30,10 +17,17 @@ def home(request):
         name = (filename + fileFormat)
         finalcode = img.save('../GeneratorQR/Olympia/static/codes/' + name)
         path = ('/static/codes/' + name)
+
+        if len(data) > 70:
+            huge_code_check = True
+        else:
+            huge_code_check = False
+
         context = {
+            #'code1': img,
             'code1': path,
-            'data_check': len(path) > 10,
-            'huge_code_check': len(data) > 58,
+            'data_check': len(path) > 14,
+            'huge_code_check' : huge_code_check,
             #'last_data': data,
             #'last_filename': filename,
             #'last_fileFormat': fileFormat,
