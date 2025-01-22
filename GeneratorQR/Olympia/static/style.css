@@ -52,8 +52,8 @@ body, html {
 .p_click {
     text-align: center;
     position: relative;
-    top: -500px;
-    left: 560px;
+    top: -845px;
+    left: 550px;
 }
 
 .img_code1 {
@@ -78,17 +78,14 @@ body, html {
 }
 
 .h1_about {
-    position: absolute;
-    top: 730px;
-    left: 406px;
+    text-align: center;
+    margin-top: 970px;
     z-index:1
 }
 
 .p_about {
     text-align: center;
-    position: absolute;
-    top: 826px;
-    left: 390px;
+    margin-top: 38px;
     z-index:1;
 }
 
@@ -278,8 +275,8 @@ a {
 
     .img_code1 {
         position: absolute;
-        top: 489px;
-        left: 230px;
+        top: 580px;
+        left: 0px;
         z-index:1;
         width: 25%;
         height: 25%;
@@ -310,7 +307,7 @@ a {
 
     .h1_about {
         position: absolute;
-        top: 1020px;
+        top: 1000px;
         left: 19px;
         z-index:1;
         text-align: center;
@@ -319,7 +316,7 @@ a {
     .p_about {
         text-align: center;
         position: absolute;
-        top: 1108px;
+        top: 1100px;
         left: 25px;
         z-index:1;
     }
