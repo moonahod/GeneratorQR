@@ -12,7 +12,7 @@
                 <label for="qrdata">Enter the name of the file to save your code in:</label><br>
                 <textarea rows="1" cols="25" type="text" id="filename"
                           name="filename" value="{{filename}}"></textarea><br>
-
+                <!-- Poll file format -->
                 <label for="poll">Choose file format for your code</label><br>
 
                 <input type="radio" id="jpg" name="fileFormat" value=".jpg">
@@ -23,6 +23,57 @@
 
                 <input type="radio" id="webp" name="fileFormat" value=".webp">
                 <label for="webp">.webp</label><br>
+
+                <!-- Poll error correction -->
+                <label for="poll">Choose an error correction level</label><br>
+
+                <input type="radio" id="L" name="EC" value="L">
+                <label for="L"> L (7%)</label><br>
+
+                <input type="radio" id="M" name="EC" value="M">
+                <label for="M"> M (15%)</label><br>
+
+                <input type="radio" id="Q" name="EC" value="Q">
+                <label for="Q"> Q (25%)</label><br>
+
+                <input type="radio" id="H" name="EC" value="H">
+                <label for="H"> H (30%)</label><br>
+
+                <!-- Color Playground -->
+                <label for="poll">You can play with colors of your code here (DEMO)</label><br>
+
+                <label for="poll">Here choose the color for the pattern (default is black)</label><br>
+                <input type="radio" id="green" name="color" value="green">
+                <label for="green"> Green</label><br>
+
+                <input type="radio" id="blue" name="color" value="light-blue">
+                <label for="blue"> Blue</label><br>
+
+                <input type="radio" id="orange" name="color" value="orange">
+                <label for="orange"> Orange</label><br>
+
+                <input type="radio" id="purple" name="color" value="purple">
+                <label for="purple"> Purple</label><br>
+
+                <input type="radio" id="red" name="color" value="red">
+                <label for="red"> Red</label><br>
+
+                <!-- Background Color Playground -->
+                <label for="poll">Here choose the color for the background (default is white)</label><br>
+                <input type="radio" id="bg-green" name="bg-color" value="green">
+                <label for="bg-green"> Green</label><br>
+
+                <input type="radio" id="bg-blue" name="bg-color" value="blue">
+                <label for="bg-blue"> Blue</label><br>
+
+                <input type="radio" id="bg-orange" name="bg-color" value="orange">
+                <label for="bg-orange"> Orange</label><br>
+
+                <input type="radio" id="bg-purple" name="bg-color" value="purple">
+                <label for="bg-purple"> Purple</label><br>
+
+                <input type="radio" id="bg-red" name="bg-color" value="red">
+                <label for="bg-red"> Red</label><br>
 
                 <input id="submit" onclick="myFunction()" type="submit" class="genBtn" value="Generate" />
 
