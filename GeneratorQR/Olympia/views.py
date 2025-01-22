@@ -4,16 +4,46 @@ import qrcode
 
 def home(request):
     if request.method == 'POST':
+
         data = request.POST.get('qrdata')
         print('data to code: ', data)
+
         filename = request.POST.get('filename')
         print('filename: ', filename)
-        qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M)
+
+        errorCorrection = request.POST.get('EC')
+        print('EC level: ', errorCorrection)
+
+        patternColor = request.POST.get('color')
+        print('pattern color: ', patternColor)
+
+        bgColor = request.POST.get('bg-color')
+        print('background color: ', bgColor)
+
+        fileFormat = request.POST.get('fileFormat')
+        print('file format: ', fileFormat)
+
+        # Error Correction Setting
+        if errorCorrection == 'L':
+            qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_L)
+        elif errorCorrection == 'M':
+            qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M)
+        elif errorCorrection == 'Q':
+            qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q)
+        elif errorCorrection == 'H':
+            qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+
         qr.add_data(data)
         qr.make(fit=True)
-        img = qr.make_image(fill_color="black", back_color="white")
+
+        # Color Playground
+        img = qr.make_image(fill_color=patternColor, back_color=bgColor)
+        if not patternColor:
+            img = qr.make_image(fill_color="black", back_color=bgColor)
+        elif not bgColor:
+            img = qr.make_image(fill_color=patternColor, back_color="white")
+
         type(img)
-        fileFormat = request.POST.get('fileFormat')
         name = (filename + fileFormat)
         finalcode = img.save('../GeneratorQR/Olympia/static/codes/' + name)
         path = ('/static/codes/' + name)
