@@ -26,12 +26,36 @@
         </div>
 
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropBtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
-                </div>
+            <button onclick="myFunction2()" class="dropBtn">Advanced settings</button>
+            <div id="myDropdown" class="dropdown-content">
+                <label for="poll">Choose an error correction level (default is M)</label><br>
+
+                <input type="radio" id="L" name="EC" value="L">
+                <label for="L"> L (7%)</label><br>
+
+                <input type="radio" id="M" name="EC" value="M">
+                <label for="M"> M (15%)</label><br>
+
+                <input type="radio" id="Q" name="EC" value="Q">
+                <label for="Q"> Q (25%)</label><br>
+
+                <input type="radio" id="H" name="EC" value="H">
+                <label for="H"> H (30%)</label><br>
+            </div>
+        </div>
+
+        <div class="dropdown2">
+            <button onclick="myFunction3()" class="dropBtn2">Color Picker</button>
+            <div id="myDropdown2" class="dropdown-content">
+
+                <!-- Pattern color picker -->
+                <label for="color">Select pattern color(default is black):</label>
+                <input type="color" id="color" name="color" value="#000"><br>
+
+                <!-- Background color picker -->
+                <label for="color">Select the color(default is white):</label>
+                <input type="color" id="bg-color" name="color" value="#f0ebdf">
+            </div>
         </div>
 
             <script>
@@ -40,6 +64,7 @@
                     x.classList.toggle("transform");
                 }
 
+                /* function will be used to save previous data */
                 function myFunction() {
                     document.getElementById("qrdata").defaultValue = "Test the new feature";
                 }
@@ -60,6 +85,27 @@
                             var openDropdown = dropdowns[i];
                             if (openDropdown.classList.contains('show')) {
                                 openDropdown.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+
+                /* second dropdown menu stuff */
+                /* When the user clicks on the button,
+                toggle between hiding and showing the dropdown content */
+                function myFunction3() {
+                    document.getElementById("myDropdown2").classList.toggle("show2");
+                }
+
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropBtn2')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content2");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show2')) {
+                                openDropdown.classList.remove('show2');
                             }
                         }
                     }
