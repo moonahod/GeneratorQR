@@ -32,6 +32,8 @@ def home(request):
             qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q)
         elif errorCorrection == 'H':
             qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
+        if not errorCorrection:
+            qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M)
 
         qr.add_data(data)
         qr.make(fit=True)
