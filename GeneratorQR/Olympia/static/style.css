@@ -335,22 +335,20 @@ a {
 
     /*too many styles later on*/
     .h1_home {
-        margin-top: 63px;
+        margin-top: 10px;
         left: 27px;
         z-index:1;
     }
 
     .form_home {
-        position: absolute;
-        top: 139px;
+        margin-top: -30px;
         left: 20px;
         z-index:1;
     }
 
     .p_click {
     text-align: center;
-    position: relative;
-    top: 80px;
+    margin-top: 80px;
     left: -75px;
     }
 
@@ -371,7 +369,6 @@ a {
     }
 
     .h1_code_example {
-        position: absolute;
         top: 430px;
         left: 0px;
         z-index:1;
