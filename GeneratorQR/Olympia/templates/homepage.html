@@ -7,6 +7,8 @@
             <form class="form_home" action="/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
+                {% if %}
+
                 <label for="qrdata">Put data you want to code here:</label><br>
                 <textarea rows="15" cols="65" type="text" id="qrdata" name="qrdata"></textarea><br>
                 <label for="qrdata">Enter the name of the file to save your code in:</label><br>
@@ -23,7 +25,6 @@
 
                 <input type="radio" id="webp" name="fileFormat" value=".webp">
                 <label for="webp">.webp</label><br>
-
 
                 <input id="submit" onclick="myFunction()" type="submit" class="genBtn" value="Generate" />
 
