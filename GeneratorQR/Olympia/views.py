@@ -1,9 +1,12 @@
 from django.shortcuts import render
 import qrcode
+import bpy
 
 
 def home(request):
     if request.method == 'POST':
+
+        print('Hey new code out there!')
 
         data = request.POST.get('qrdata')
         print('data to code: ', data)
@@ -14,14 +17,20 @@ def home(request):
         errorCorrection = request.POST.get('EC')
         print('EC level: ', errorCorrection)
 
-        patternColor = request.POST.get('color')
+        patternColor = request.POST.get('patternColor')
         print('pattern color: ', patternColor)
 
-        bgColor = request.POST.get('bg-color')
-        print('background color: ', bgColor)
+        backgroundColor = request.POST.get('backgroundColor')
+        print('background color: ', backgroundColor)
 
         fileFormat = request.POST.get('fileFormat')
         print('file format: ', fileFormat)
+
+        for w in wm.windows:
+            print(w.width)
+            print(w.height)
+            windowWidth = w.width
+
 
         # Error Correction Setting
         if errorCorrection == 'L':
@@ -39,11 +48,14 @@ def home(request):
         qr.make(fit=True)
 
         # Color Playground
-        img = qr.make_image(fill_color=patternColor, back_color=bgColor)
+        if patternColor and backgroundColor:
+            img = qr.make_image(fill_color=patternColor, back_color=backgroundColor)
         if not patternColor:
-            img = qr.make_image(fill_color="black", back_color=bgColor)
-        elif not bgColor:
+            img = qr.make_image(fill_color="white", back_color=backgroundColor)
+        elif not backgroundColor:
             img = qr.make_image(fill_color=patternColor, back_color="white")
+        elif not patternColor and not backgroundColor:
+            img = qr.make_image(fill_color="white", back_color="white")
 
         type(img)
         name = (filename + fileFormat)
@@ -54,6 +66,9 @@ def home(request):
             huge_code_check = True
         else:
             huge_code_check = False
+
+        if windowWidth <= 650:
+            mobileVersion = True
 
         context = {
             #'code1': img,
