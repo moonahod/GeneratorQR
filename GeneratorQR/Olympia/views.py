@@ -1,12 +1,11 @@
 from django.shortcuts import render
 import qrcode
-import bpy
 
 
 def home(request):
     if request.method == 'POST':
 
-        print('Hey new code out there!')
+        print('Hey, new code coming!')
 
         data = request.POST.get('qrdata')
         print('data to code: ', data)
@@ -17,20 +16,24 @@ def home(request):
         errorCorrection = request.POST.get('EC')
         print('EC level: ', errorCorrection)
 
-        patternColor = request.POST.get('patternColor')
+        patternColor = request.POST.get('color')
         print('pattern color: ', patternColor)
 
-        backgroundColor = request.POST.get('backgroundColor')
-        print('background color: ', backgroundColor)
+        bgColor = request.POST.get('bg-color')
+        print('background color: ', bgColor)
 
         fileFormat = request.POST.get('fileFormat')
         print('file format: ', fileFormat)
+        if not fileFormat:
+            fileFormat = '.jpg'
 
-        for w in wm.windows:
-            print(w.width)
-            print(w.height)
-            windowWidth = w.width
-
+        #win = fpmi.gui.getWindow('MyWindow')
+        #width = win.size.width
+        #print('window width: ', width)
+        #if width <= 420:
+        #    mobile = True
+        #else:
+        #    mobile = False
 
         # Error Correction Setting
         if errorCorrection == 'L':
@@ -41,23 +44,18 @@ def home(request):
             qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q)
         elif errorCorrection == 'H':
             qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_H)
-        if not errorCorrection:
-            qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M)
 
         qr.add_data(data)
         qr.make(fit=True)
 
         # Color Playground
-        if patternColor and backgroundColor:
-            img = qr.make_image(fill_color=patternColor, back_color=backgroundColor)
+        img = qr.make_image(fill_color=patternColor, back_color=bgColor)
         if not patternColor:
-            img = qr.make_image(fill_color="white", back_color=backgroundColor)
-        elif not backgroundColor:
+            img = qr.make_image(fill_color="black", back_color=bgColor)
+        elif not bgColor:
             img = qr.make_image(fill_color=patternColor, back_color="white")
-        elif not patternColor and not backgroundColor:
-            img = qr.make_image(fill_color="white", back_color="white")
-
         type(img)
+
         name = (filename + fileFormat)
         finalcode = img.save('../GeneratorQR/Olympia/static/codes/' + name)
         path = ('/static/codes/' + name)
@@ -67,14 +65,15 @@ def home(request):
         else:
             huge_code_check = False
 
-        if windowWidth <= 650:
-            mobileVersion = True
+        #if windowWidth <= 650:
+           # mobileVersion = True
 
         context = {
             #'code1': img,
             'code1': path,
             'data_check': len(path) > 14,
             'huge_code_check' : huge_code_check,
+            #'mobile' : mobile,
             #'last_data': data,
             #'last_filename': filename,
             #'last_fileFormat': fileFormat,
