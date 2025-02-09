@@ -6,9 +6,9 @@
         x.classList.toggle("transform");
     }
 
-    //function myFunction() {
-    //    document.getElementById("qrdata").defaultValue = "Test the new feature";
-    //}
+    function myFunction() {
+        document.getElementById("qrdata").defaultValue = "Test the new feature";
+    }
 
     /* dropdown menu stuff */
     /* When the user clicks on the button,
