@@ -382,15 +382,15 @@ a {
     }
 
     .p_qr_icon {
-    position: relative;
-    top: 75px;
-    left: 50px;
-    z-index:1;
+        margin-top: 40px;
+        margin-left: 0px;
     }
 
     .img_qr_icon {
-    height: 40%;
-    width: 40%;
+        margin-top: 440px;
+        margin-left: -630px;
+        height: 40%;
+        width: 40%;
     }
 
     /*All stuff connected with sidebar menu and
