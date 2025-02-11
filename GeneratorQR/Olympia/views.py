@@ -54,13 +54,16 @@ def home(request):
             img = qr.make_image(fill_color="black", back_color=bgColor)
         elif not bgColor:
             img = qr.make_image(fill_color=patternColor, back_color="white")
+        elif not patternColor and bgColor:
+            img = qr.make_image(fill_color="#000", back_color="#f2eddf")
+
         type(img)
 
         name = (filename + fileFormat)
         finalcode = img.save('../GeneratorQR/Olympia/static/codes/' + name)
         path = ('/static/codes/' + name)
 
-        if len(data) > 70:
+        if len(data) > 80:
             huge_code_check = True
         else:
             huge_code_check = False
