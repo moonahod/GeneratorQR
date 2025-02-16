@@ -5,7 +5,7 @@
         <div style="position: static; scroll-behavior: smooth" class="home">
             <h1 class="h1_welcome">Вітаем у QR Machine!</h1>
             <h1 class="h1_home" id="home">Стварай QR код!</h1>
-            <form class="form_home" action="/" method="POST" enctype="multipart/form-data">
+            <form class="form_home" action="../by/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <label for="qrdata">Упішыце дадзеныя для кода сюды:</label><br>
@@ -79,39 +79,36 @@
 
                 <input type="radio" id="bg-red" name="bg-color" value="red">
                     <label for="bg-red"> Чырвоны</label><br>
-                <input id="submit" onclick="myFunction()" type="submit" class="genBtn"
+
+                <input type="submit" class="genBtn"
                        value="Generate" />
-
-                {% if huge_code_check %}
-
-                <p class="p_click">your qr code is too big for this page<br>download it by clicking this icon</p>
-                <p class="p_qr_icon"><a href="{{code1}}" download="{{name}}"><img
-                        class="img_qr_icon" src="../static/media/qr_code_icon.png"></a></p>
-
-                {% elif data_check %}
-
-                <p class="p_click">download your code by clicking on it!</p>
-                <p class="img_code1"><a href={{code1}} download="{{name}}"><img src="{{code1}}"></a></p>
-                    <!--<a href={{code1}} download="{{name}}" class="downloadBtn"
-                    type="download">Download</a>-->
-
-                {% else %}
-
-                <h1 class="h1_code_example">Code example:</h1>
-                <img class="default_qr_img" src="../static/codes/Hello.jpg">
-
-                {% endif %}
             </form>
 
-            <h1 class="h1_about" id="about">Something about our project</h1>
+            {% if huge_code_check %}
 
-            <p class="p_about">The goal
-                of the QR machine<br> is to provide you just a convenient easy-to-use<br> ad-free website
-                to create qr codes<br> <br>=)</p>
+                <p class="p_click">згенераваны код за вялікі для гэтай старонкі, спамуйце яго, націснуўшы выяву</p>
+                <p class="p_qr_icon"><a href="{{code1}}" download="{{name}}"><img
+                        class="img_qr_icon" src="../static/media/qr_code_icon.png"></a></p>
+            {% elif data_check %}
+                <p class="p_click">спамуй код, націснуўшы на яго!</p>
+                <p class="img_code1"><a href={{code1}} download="{{name}}"><img src="{{code1}}"></a></p>
+                <!--<a href={{code1}} download="{{name}}" class="downloadBtn"
+                        type="download">Download</a>-->
+            {% else %}
+
+                <h1 class="h1_code_example">Прыклад кода:</h1>
+                <img class="default_qr_img" src="../static/codes/Hello.jpg">
+            {% endif %}
+
+            <h1 class="h1_about" id="about">Трошкі аб нашым праекце</h1>
+
+            <p class="p_about">Галоўная мэта
+                QR Machine - <br> гэта стварыць просты і зручны сайт<br> для генерацыі qr кодаў
+                без назойлівай рэкламы<br> <br>=)</p>
 
             <img src="">
 
-            <center><h1 class="h1_contacts" id="contacts">You can contact me</h1></center>
+            <center><h1 class="h1_contacts" id="contacts">Можаце звязацца са мной</h1></center>
 
             <p class="p_github"><a href="https://github.com/moonahod/GeneratorQR" target="_blank">
                 <img class="img_github" src="../static/media/github_for_link.png"></a></p>
