@@ -13,13 +13,20 @@ def lang(request):
 
 
 def home_en(request):
-    if request.method == 'POST':
+    data = request.POST.get('qrdata')
+    if not data:
+        # for alert later
+        no_data = True
+        return render(request, 'homepage-en.html')
+    else:
         print('eng version code gen')
 
         data = request.POST.get('qrdata')
         print('data to code: ', data)
 
         filename = request.POST.get('filename')
+        if not filename:
+            filename = ("your_qrcode")
         print('filename: ', filename)
 
         errorCorrection = request.POST.get('EC')
@@ -80,8 +87,6 @@ def home_en(request):
             #'last_fileFormat': fileFormat,
         }
         return render(request, 'homepage-en.html', context)
-    else:
-        return render(request, 'homepage-en.html')
 
 def home_by(request):
     if request.method == 'POST':
