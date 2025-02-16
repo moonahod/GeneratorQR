@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <h1>Hello!</h1>
-
-    <p>choose your preferred language</p>
-    <a href="en/">english</a><br>
-    <a href="by/">беларуская</a>
-    <!--<label for="poll">please choose your preferred language:</label><br>
-
-    <form method="POST">
-        {% csrf_token %}
-        <input type="radio" id="EN" name="language" value="EN">
-        <label for="EN">EN</label><br>
-
-        <input type="radio" id="BY" name="language" value="BY">
-        <label for="BY">BY</label><br>
-
-        <input type="submit" value="Confirm" />
-    </form>-->
+        {% load static %}
+        <meta charset="UTF-8">
+        <title>Absolute QR machine</title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 </head>
 
 <body>
+    <div class="lang-container">
+        <h1 class="hello">Hello!</h1>
 
+        <p>choose your preferred language:</p>
+        <a href="en/">english</a><br>
+        <a href="by/">беларуская</a>
+        <!--<label for="poll">please choose your preferred language:</label><br>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="radio" id="EN" name="language" value="EN">
+            <label for="EN">EN</label><br>
+
+            <input type="radio" id="BY" name="language" value="BY">
+            <label for="BY">BY</label><br>
+
+            <input type="submit" value="Confirm" />
+        </form>-->
+    </div>
 </body>
