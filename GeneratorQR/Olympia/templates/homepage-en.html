@@ -5,16 +5,16 @@
         <div style="position: static; scroll-behavior: smooth" class="home">
             <h1 class="h1_welcome">Welcome to QR Code Machine!</h1>
             <h1 class="h1_home" id="home">Create your QR Code!</h1>
-            <form class="form_home" action="/" method="POST" enctype="multipart/form-data">
+            <form class="form_home" action="../en/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <label for="qrdata">Put data you want to code here:</label><br>
                     <!--<div id="qrdata" name="qrdata" contentEditable="true"></div>-->
                     <textarea rows="10" cols="35" type="text" id="qrdata" name="qrdata"></textarea><br>
-                <label for="qrdata">Enter the name of the file to save your code in:</label><br>
+                <label for="qrdata" placeholder="Type some data..." >Enter the name of the file to save your code in:</label><br>
                     <!--<div id="filename" name="filename" contentEditable="true"></div>-->
                     <textarea rows="2" cols="20" type="text" id="filename"
-                              name="filename" value="{{filename}}"></textarea><br>
+                              name="filename" value="{{filename}}" placeholder="your_qrcode"></textarea><br>
                 <!-- Poll file format -->
                 <label for="poll">Choose file format for your code</label><br>
 
@@ -28,7 +28,7 @@
                 <label for="webp">.webp</label><br>
 
                 <!-- Poll error correction -->
-                <label for="poll">Choose an error correction level</label><br>
+                <label for="poll">Choose an error correction level(default M)</label><br>
 
                 <input type="radio" id="L" name="EC" value="L">
                     <label for="L"> L (7%)</label><br>
@@ -85,25 +85,19 @@
                        value="Generate" />
             </form>
 
-                {% if huge_code_check %}
-
+            {% if huge_code_check %}
                 <p class="p_click">your qr code is too big for this page<br>download it by clicking this icon</p>
                 <p class="p_qr_icon"><a href="{{code1}}" download="{{name}}"><img
                         class="img_qr_icon" src="../static/media/qr_code_icon.png"></a></p>
-
-                {% elif data_check %}
-
+            {% elif data_check %}
                 <p class="p_click">download your code by clicking on it!</p>
                 <p class="img_code1"><a href={{code1}} download="{{name}}"><img src="{{code1}}"></a></p>
                     <!--<a href={{code1}} download="{{name}}" class="downloadBtn"
-                    type="download">Download</a>-->
-
-                {% else %}
-
+                   type="download">Download</a>-->
+            {% else %}
                 <h1 class="h1_code_example">Code example:</h1>
                 <img class="default_qr_img" src="../static/codes/Hello.jpg">
-
-                {% endif %}
+            {% endif %}
 
             <h1 class="h1_about" id="about">Something about our project</h1>
 
