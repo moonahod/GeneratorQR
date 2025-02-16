@@ -34,6 +34,30 @@ body, html {
 }
 /*End of basic essentials*/
 
+/* Language picker html */
+
+.lang-container {
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+    width: 420px;
+    background-color: #1c1d22;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    .hello {
+        color: #f2eddf;
+        font-size: 30px;
+        text-align: center;
+    }
+    p {
+        color: #f2eddf;
+    }
+    a {
+        color: #f2eddf;
+    }
+}
+
 /*too many styles later on*/
 
 .h1_welcome {
