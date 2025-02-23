@@ -2,7 +2,13 @@ from django.shortcuts import render, redirect
 import qrcode
 
 def lang(request):
+    #language = request.POST.get ('language')
     return render(request, 'homepage.html')
+
+    #if language == "EN":
+        #return redirect('home_en')
+    #else:
+        #return redirect('home_by')
     #render(request, 'homepage.html')
     #language = request.POST.get('language')
 
@@ -13,6 +19,9 @@ def lang(request):
 
 
 def home_en(request):
+
+    test_var_text = str("test var text")
+
     data = request.POST.get('qrdata')
     if not data:
         # for alert later
@@ -58,12 +67,6 @@ def home_en(request):
 
         # Color Playground
         img = qr.make_image(fill_color=patternColor, back_color=bgColor)
-        if not patternColor:
-            img = qr.make_image(fill_color="black", back_color=bgColor)
-        elif not bgColor:
-            img = qr.make_image(fill_color=patternColor, back_color="#f2eddf")
-        else:
-            img = qr.make_image(fill_color="#000", back_color="#f2eddf")
 
         type(img)
 
