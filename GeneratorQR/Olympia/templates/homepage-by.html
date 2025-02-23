@@ -10,75 +10,53 @@
 
                 <label for="qrdata">Упішыце дадзеныя для кода сюды:</label><br>
                     <!--<div id="qrdata" name="qrdata" contentEditable="true"></div>-->
-                    <textarea rows="10" cols="35" type="text" id="qrdata" name="qrdata"></textarea><br>
-                <label for="qrdata">Назву файла для кода сюды:</labellang><br>
+                    <textarea rows="8" cols="39" type="text" id="qrdata"
+                              name="qrdata" placeholder="Упішы тэкст/спасылку"></textarea><br>
+                <label for="qrdata">Назву файла для кода сюды:</label><br>
                     <!--<div id="filename" name="filename" contentEditable="true"></div>-->
-                    <textarea rows="2" cols="20" type="text" id="filename"
-                              name="filename" value="{{filename}}"></textarea><br>
+                    <input class="input_filename" type="text" id="filename"
+                              name="filename" value="{{filename}}" placeholder="my_qrcode"><br>
                 <!-- Poll file format -->
-                <label for="poll">Выберыце фармат файла для кода</label><br>
-
-                <input type="radio" id="jpg" name="fileFormat" value=".jpg">
-                <label for="jpg">.jpg</label><br>
-
-                <input type="radio" id="png" name="fileFormat" value=".png">
-                <label for="png">.png</label><br>
-
-                <input type="radio" id="webp" name="fileFormat" value=".webp">
-                <label for="webp">.webp</label><br>
+                <label for="fileFormat">Выберыце фармат файла для кода</label><br>
+                <select id="fileFormat" name="fileFormat">
+                    <option value="jpg">.jpg</option>
+                    <option value="png">.png</option>
+                    <option value="webp">.webp</option>
+                </select><br>
 
                 <!-- Poll error correction -->
-                <label for="poll">Выберыце ўзровень карэкцыі памылак</label><br>
-
-                <input type="radio" id="L" name="EC" value="L">
-                    <label for="L"> L (7%)</label><br>
-
-                <input type="radio" id="M" name="EC" value="M">
-                    <label for="M"> M (15%)</label><br>
-
-                <input type="radio" id="Q" name="EC" value="Q">
-                    <label for="Q"> Q (25%)</label><br>
-
-                <input type="radio" id="H" name="EC" value="H">
-                    <label for="H"> H (30%)</label><br>
+                <label for="EC">Выберыце ўзровень карэкцыі памылак</label><br>
+                <select id="EC" name="EC">
+                    <option value="L">L (7%)</option>
+                    <option value="M" selected>M (15%)</option>
+                    <option value="Q">Q (25%)</option>
+                    <option value="H">H (30%)</option>
+                </select><br>
 
                 <!-- Color Playground -->
-
-                <label for="poll">Тут можаце пагуляць з колерамі кода (DEMO)</label><br>
-                <label for="poll">Выбярыце колер узору (чорны па змоўчанні)</label><br>
-
-                <input type="radio" id="green" name="color" value="green">
-                    <label for="green"> Зялёны</label><br>
-
-                <input type="radio" id="blue" name="color" value="light-blue">
-                    <label for="blue"> Блакітны</label><br>
-
-                <input type="radio" id="orange" name="color" value="orange">
-                    <label for="orange"> Аранжавы</label><br>
-
-                <input type="radio" id="purple" name="color" value="purple">
-                    <label for="purple"> Фіялетавы</label><br>
-
-                <input type="radio" id="red" name="color" value="red">
-                    <label for="red"> Чырвоны</label><br>
+                <label>Тут можаце пагуляць з колерамі кода (DEMO)</label><br>
+                <label for="color">Выбярыце колер узору (чорны па змоўчанні)<br>
+                    <select id="color" name="color">
+                        <option value="black" selected>Чорны</option>
+                        <option value="green">Зялёны</option>
+                        <option value="light-blue">Блакітны</option>
+                        <option value="orange">Аранжавы</option>
+                        <option value="purple">Фіялетавы</option>
+                        <option value="red">Чырвоны</option>
+                        <option value="white">Белы</option>
+                    </select><br>
 
                 <!-- Background Color Playground -->
-                <label for="poll">Тут выберыце колер фону (белы па змоўчанні)</label><br>
-
-                <input type="radio" id="bg-green" name="bg-color" value="green">
-                    <label for="bg-green"> Зялёны</label><br>
-
-                <input type="radio" id="bg-blue" name="bg-color" value="blue">
-                    <label for="bg-blue"> Блакітны</label><br>
-
-                <input type="radio" id="bg-orange" name="bg-color" value="orange">
-                    <label for="bg-orange"> Аранжавы</label><br>
-
-                <input type="radio" id="bg-purple" name="bg-color" value="purple">
-                    <label for="bg-purple"> Фіялетавы</label><br>
-
-                <input type="radio" id="bg-red" name="bg-color" value="red">
-                    <label for="bg-red"> Чырвоны</label><br>
+                    <label for="bg-color">Тут выберыце колер фону (белы па змоўчанні)</label><br>
+                    <select id="bg-color" name="bg-color">
+                        <option value="white" selected>Белы</option>
+                        <option value="green">Зялёны</option>
+                        <option value="light-blue">Блакітны</option>
+                        <option value="orange">Аранжавы</option>
+                        <option value="purple">Фіялетавы</option>
+                        <option value="red">Чырвоны</option>
+                        <option value="black">Чорны</option>
+                    </select><br>
 
                 <input type="submit" class="genBtn"
                        value="Generate" />
