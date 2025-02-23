@@ -3,87 +3,64 @@
 {% block body %}
 
         <div style="position: static; scroll-behavior: smooth" class="home">
-            <h1 class="h1_welcome">Welcome to QR Code Machine!</h1>
+            <h1 class="h1_welcome">Welcome to QR Machine!</h1>
             <h1 class="h1_home" id="home">Create your QR Code!</h1>
             <form class="form_home" action="../en/" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <label for="qrdata">Put data you want to code here:</label><br>
                     <!--<div id="qrdata" name="qrdata" contentEditable="true"></div>-->
-                    <textarea rows="10" cols="35" type="text" id="qrdata" name="qrdata"></textarea><br>
-                <label for="qrdata" placeholder="Type some data..." >Enter the name of the file to save your code in:</label><br>
+                    <textarea rows="8" cols="39" type="text" id="qrdata"
+                              name="qrdata" placeholder="Type some data..."></textarea><br>
+                <label for="qrdata">Enter the name of the file to save your code in:</label><br>
                     <!--<div id="filename" name="filename" contentEditable="true"></div>-->
-                    <textarea rows="2" cols="20" type="text" id="filename"
-                              name="filename" value="{{filename}}" placeholder="your_qrcode"></textarea><br>
+                    <input class="input_filename" type="text" id="filename"
+                              name="filename" value="{{filename}}" placeholder="my_qrcode"><br>
+
                 <!-- Poll file format -->
-                <label for="poll">Choose file format for your code</label><br>
-
-                <input type="radio" id="jpg" name="fileFormat" value=".jpg">
-                <label for="jpg">.jpg</label><br>
-
-                <input type="radio" id="png" name="fileFormat" value=".png">
-                <label for="png">.png</label><br>
-
-                <input type="radio" id="webp" name="fileFormat" value=".webp">
-                <label for="webp">.webp</label><br>
+                <label for="fileFormat">Choose file format for your code</label><br>
+                <select id="fileFormat" name="fileFormat">
+                    <option value="jpg">.jpg</option>
+                    <option value="png">.png</option>
+                    <option value="webp">.webp</option>
+                </select><br>
 
                 <!-- Poll error correction -->
-                <label for="poll">Choose an error correction level(default M)</label><br>
-
-                <input type="radio" id="L" name="EC" value="L">
-                    <label for="L"> L (7%)</label><br>
-
-                <input type="radio" id="M" name="EC" value="M">
-                    <label for="M"> M (15%)</label><br>
-
-                <input type="radio" id="Q" name="EC" value="Q">
-                    <label for="Q"> Q (25%)</label><br>
-
-                <input type="radio" id="H" name="EC" value="H">
-                    <label for="H"> H (30%)</label><br>
+                <label for="EC">Choose an error correction level(default M)</label><br>
+                <select id="EC" name="EC">
+                    <option value="L">L (7%)</option>
+                    <option value="M" selected>M (15%)</option>
+                    <option value="Q">Q (25%)</option>
+                    <option value="H">H (30%)</option>
+                </select><br>
 
                 <!-- Color Playground -->
-                <label for="poll">You can play with colors of your code here (DEMO)</label><br>
-                <label for="poll">Here choose the color for the pattern (default is black)</label><br>
-
-                    <input type="radio" id="green" name="color" value="green">
-                        <label for="green"> Green</label><br>
-
-                    <input type="radio" id="blue" name="color" value="light-blue">
-                        <label for="blue"> Blue</label><br>
-
-                    <input type="radio" id="orange" name="color" value="orange">
-                        <label for="orange"> Orange</label><br>
-
-                    <input type="radio" id="purple" name="color" value="purple">
-                        <label for="purple"> Purple</label><br>
-
-                    <input type="radio" id="red" name="color" value="red">
-                        <label for="red"> Red</label><br>
-                <!--<input type="submit" value="OK" />-->
+                <label>You can play with colors of your code here (DEMO)</label><br>
+                <form for="color">Here choose the color for the pattern (default is black)<br>
+                    <select id="color" name="color">
+                        <option value="black" selected>Black</option>
+                        <option value="green">Green</option>
+                        <option value="light-blue">Blue</option>
+                        <option value="orange">Orange</option>
+                        <option value="purple">Purple</option>
+                        <option value="red">Red</option>
+                        <option value="white">White</option>
+                    </select><br>
 
                 <!-- Background Color Playground -->
-                <label for="poll">Here choose the color for the background (default is white)</label><br>
+                <label for="bg-color">Here choose the color for the background (default is white)</label><br>
+                    <select id="bg-color" name="bg-color">
+                        <option value="white" selected>White</option>
+                        <option value="green">Green</option>
+                        <option value="light-blue">Blue</option>
+                        <option value="orange">Orange</option>
+                        <option value="purple">Purple</option>
+                        <option value="red">Red</option>
+                        <option value="black">Black</option>
+                    </select><br>
 
-                    <input type="radio" id="bg-green" name="bg-color" value="green">
-                        <label for="bg-green"> Green</label><br>
-
-                    <input type="radio" id="bg-blue" name="bg-color" value="blue">
-                        <label for="bg-blue"> Blue</label><br>
-
-                    <input type="radio" id="bg-orange" name="bg-color" value="orange">
-                        <label for="bg-orange"> Orange</label><br>
-
-                    <input type="radio" id="bg-purple" name="bg-color" value="purple">
-                        <label for="bg-purple"> Purple</label><br>
-
-                    <input type="radio" id="bg-red" name="bg-color" value="red">
-                        <label for="bg-red"> Red</label><br>
-                <!--<input type="submit" value="OK" />-->
-
-                <input type="submit" class="genBtn"
-                       value="Generate" />
-            </form>
+            <input type="submit" class="genBtn"
+                   value="Generate" />
 
             {% if huge_code_check %}
                 <p class="p_click">your qr code is too big for this page<br>download it by clicking this icon</p>
@@ -98,6 +75,8 @@
                 <h1 class="h1_code_example">Code example:</h1>
                 <img class="default_qr_img" src="../static/codes/Hello.jpg">
             {% endif %}
+
+            </form>
 
             <h1 class="h1_about" id="about">Something about our project</h1>
 
